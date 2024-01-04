@@ -30,7 +30,7 @@ h1Element1.style.backgroundColor = "red";
 var myInfor = {
   myName: "Nguyễn Minh Hoàng",
   age: 32,
-  address: "Bắc Giang",
+  address: "Bắc Giang Lục Nam",
   mssv: "PH1234",
 };
 
