@@ -12,12 +12,11 @@ var h1Element3 = document.getElementsByTagName("h1")[0];
 
 var myInfor = {
   myName: "Nguyễn Minh Hoàng",
-  myAge: 32,
-  mssv: "PH1234",
+  myAge: 18,
   email: "hoangnm62@fpt.edu.vn",
   major: "frontend",
   position: "Giám đốc xưởng",
-  address: "Bắc Giang",
+  address: "Bắc Giang Lục Nam Bảo Đài",
 };
 
 /**
