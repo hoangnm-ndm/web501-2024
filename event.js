@@ -11,16 +11,19 @@ function register() {
   var confirmPass = document.getElementById("confirmPass").value;
 
   // Kiem tra du lieu:
-  if (username === "" || password === "" || confirmPass === "") {
+  if (!username || !password || !confirmPass) {
     alert("khong duoc bo trong!");
+    return;
   }
 
   if (password.length < 6) {
     alert("Password phai dai hon 6 ky tu!");
+    return;
   }
 
   if (password !== confirmPass) {
     alert("Mat khau nhap lai khong khop!");
+    return;
   }
 
   // Buoc 2:
