@@ -34,3 +34,19 @@ function register() {
   localStorage.setItem("user", JSON.stringify(userInfor));
   alert("Dang ky thanh cong!");
 }
+
+// Falsy đại diện cho các giá trị negative
+/**
+ * Falsy bao gồm:
+ * 1. false
+ * 2. null
+ * 3. undefined
+ * 4. NaN
+ * 5. ""
+ * 6. 0
+ */
+
+/**
+ * Làm một form đăng nhập với tài khoản đã đăng ký thành công trong localStorage.
+ * Nếu khớp username và pass thì báo đăng nhập thành công!
+ */
