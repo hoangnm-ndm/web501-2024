@@ -14,21 +14,13 @@ function register() {
     return;
   }
 
-  // Buoc 2:
-  if (localStorage.getItem("user")) {
-    const userDatabase = JSON.parse(localStorage.getItem("user"));
-    if (
-      userDatabase.username === username &&
-      userDatabase.password === password
-    ) {
-      alert("Dang nhap thanh cong");
+  if (localStorage.getItem("users")) {
+    const usersDatabase = JSON.parse(localStorage.getItem("users"));
+    usersDatabase.some((item) => {
+      if (item.username === username && item.password === password) {
+        alert("Dang nhap thanh cong");
+      }
       return;
-    } else {
-      alert("Sai thong tin!");
-      return;
-    }
+    });
   }
-
-  alert("Connect falled!");
-  return;
 }

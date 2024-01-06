@@ -4,7 +4,8 @@
  * Bước 3: Lưu object chứa thông tin này vào localStorage
  */
 // Cach tong quan:
-function validationForm({ ...args }) {}
+
+const users = [];
 function register() {
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
@@ -34,7 +35,8 @@ function register() {
   };
   // Buoc 3:
   // BOM = Browser Object Model
-  localStorage.setItem("user", JSON.stringify(userInfor));
+  users.push(userInfor);
+  localStorage.setItem("users", JSON.stringify(users));
   alert("Dang ky thanh cong!");
 }
 
