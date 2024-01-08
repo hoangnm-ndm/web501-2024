@@ -1,9 +1,24 @@
-function register() {
-  /**
-   * Lay thong tin dang ky luu vao object userInfor
-   * Lay userInfor luu vao localStorage.
-   */
+var users = [];
 
+// clean code
+function validationForm(user) {
+  if (user.email === "" || user.password === "" || user.confirmPass === "") {
+    alert("khong duoc de trong!");
+    return false;
+  }
+  if (user.password.length < 6) {
+    alert("Password qua ngan!");
+    return false;
+  }
+
+  if (user.password !== user.confirmPass) {
+    alert("Mat khau nhap lai khong khop!");
+    return false;
+  }
+
+  return true;
+}
+function register() {
   // Buoc 1: Lay du lieu tu form:
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
@@ -16,6 +31,11 @@ function register() {
     confirmPass,
   };
 
-  // Buoc 3: Đưa vào localStorage.
-  localStorage.setItem("tenNguoiDung", JSON.stringify(userInfor));
+  if (validationForm(userInfor)) {
+    users.push(userInfor);
+    // Buoc 3: Đưa vào localStorage.
+    localStorage.setItem("users", JSON.stringify(users));
+    alert("Dang ky thanh cong!");
+    return;
+  }
 }
