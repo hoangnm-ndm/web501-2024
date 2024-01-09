@@ -31,6 +31,7 @@ var myName = "hoàng"; // -> var myName; myName = "hoàng"
 
 if (true) {
   let quoctich = "VN";
+  quoctich = "TQ";
   console.log(quoctich);
 }
 
@@ -46,7 +47,7 @@ function sum(a, b) {
 // let school = "FPOLY";
 
 /**
- * let:
+ * const:
  * 1. Không thể khai báo lại
  * 2. Không thể gán lại (với các kiểu dữ liệu tham chiếu, có thể thay đổi dữ liệu bằng phương thức).
  * 3. Phạm vi sử dụng function-scope, block-scope
