@@ -13,6 +13,7 @@ function muaNha(tien) {
     console.log("khong du tien!");
   }
 }
+
 function lamThemKiemTien(callback) {
   console.log("Di lam!");
   setTimeout(() => {
@@ -22,4 +23,4 @@ function lamThemKiemTien(callback) {
   }, 3000);
 }
 
-console.log(lamThemKiemTien(muaNha));
+lamThemKiemTien(muaLaptop);
