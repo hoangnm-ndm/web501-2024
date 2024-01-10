@@ -32,7 +32,7 @@ function doiTien(usd) {
 doiTien(2);
 console.log(i);
 
-/**
+/*
  * let
  * 1. Không khai báo lại.
  * 2. Có thể gán lại
@@ -40,7 +40,7 @@ console.log(i);
  * 4. Ko hỗ trợ hoisting
  */
 
-/**
+/*
  * const
  * 1. Không khai báo lại.
  * 2. Không thể gán lại
