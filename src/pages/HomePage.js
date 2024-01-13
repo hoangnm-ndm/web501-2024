@@ -1,7 +1,3 @@
-const HomePage2 = () => {
-  return `<h2>HomePage</h2>`;
-};
-
 export const datas = [
   { id: "123", name: "Iphone 15 pro", price: 2000 },
   { id: "123", name: "Iphone 16 pro", price: 2200 },
@@ -27,7 +23,7 @@ const HomePage = () => {
   return html;
 };
 
-export { HomePage, HomePage2 };
+export { HomePage };
 // export default HomePage;
 // export default HomePage2;
 
