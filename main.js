@@ -6,6 +6,7 @@ import Navigo from "navigo";
 import AboutPage from "./src/pages/AboutPage";
 import NotFoundPage from "./src/pages/NotFoundPage";
 import render from "./src/utils/common";
+import SignUpPage from "./src/pages/SignUpPage";
 
 const router = new Navigo("/", { linksSelector: "a" });
 //http://localhost:5173/
@@ -21,6 +22,9 @@ router.on("/about", () => {
 });
 
 router.on("/home", () => router.navigate("/"));
+router.on("/signup", () => {
+  render(app, SignUpPage);
+});
 
 router.notFound(() => {
   render(app, NotFoundPage);
