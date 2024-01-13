@@ -23,7 +23,7 @@ const HomePage = () => {
   return html;
 };
 
-export { HomePage };
+export default HomePage;
 // export default HomePage;
 // export default HomePage2;
 
