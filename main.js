@@ -1,5 +1,3 @@
-import "./node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "./node_modules/bootstrap/dist/js/bootstrap.min.js";
 import "./style.css";
 import HomePage from "./src/pages/HomePage";
 import Navigo from "navigo";
