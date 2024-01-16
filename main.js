@@ -6,9 +6,10 @@ import NotFoundPage from "./src/pages/NotFoundPage";
 import render from "./src/utils/common";
 import SignUpPage from "./src/pages/SignUpPage";
 import register from "./src/components/Register";
+import SignInPage from "./src/pages/SignInPage";
+import signIn from "./src/components/SignIn";
 
 const router = new Navigo("/", { linksSelector: "a" });
-//http://localhost:5173/
 
 const app = document.getElementById("app");
 
@@ -18,9 +19,16 @@ router.on("/about", () => render(app, AboutPage));
 
 router.on("/home", () => router.navigate("/"));
 router.on("/signup", () => render(app, SignUpPage), {
-  after() {
+  after: () => {
     const btnRegister = document.getElementById("btnRegister");
     btnRegister.onclick = register;
+  },
+});
+
+router.on("/signin", () => render(app, SignInPage), {
+  after: () => {
+    const btnSignIn = document.getElementById("btnSignIn");
+    btnSignIn.onclick = signIn;
   },
 });
 

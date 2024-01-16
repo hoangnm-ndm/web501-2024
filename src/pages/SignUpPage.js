@@ -1,7 +1,7 @@
 const SignUpPage = () => {
-  return `
+  return /*html*/ `
   <form action="">
-  <h1>Please Register</h1>
+  <h1>Đăng ký</h1>
   <div class="mb-3">
     <label for="username" class="form-label">Username</label>
     <input
@@ -34,10 +34,9 @@ const SignUpPage = () => {
     <button
       type="button"
       id="btnRegister"
-      onclick="register()"
       class="btn btn-primary btn-submit"
     >
-      Register
+      Đăng ký
     </button>
   </div>
 </form>
