@@ -33,6 +33,7 @@ const SignUpPage = () => {
   <div class="mb-3">
     <button
       type="button"
+      id="btnRegister"
       onclick="register()"
       class="btn btn-primary btn-submit"
     >
