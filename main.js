@@ -8,15 +8,14 @@ import SignUpPage from "./src/pages/SignUpPage";
 import register from "./src/components/Register";
 import SignInPage from "./src/pages/SignInPage";
 import signIn from "./src/components/SignIn";
+import ContactPage from "./src/pages/ContactPage";
 
 const router = new Navigo("/", { linksSelector: "a" });
-
 const app = document.getElementById("app");
 
 router.on("/", () => render(app, HomePage));
-
 router.on("/about", () => render(app, AboutPage));
-
+router.on("/contact", () => render(app, ContactPage));
 router.on("/home", () => router.navigate("/"));
 router.on("/signup", () => render(app, SignUpPage), {
   after: () => {
@@ -33,5 +32,4 @@ router.on("/signin", () => render(app, SignInPage), {
 });
 
 router.notFound(() => render(app, NotFoundPage));
-
 router.resolve();
