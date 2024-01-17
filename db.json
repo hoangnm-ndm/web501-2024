@@ -1,6 +1,37 @@
 {
-  "users": [],
-
+  "users": [
+    {
+      "email": "olivie@mail.com",
+      "password": "$2a$10$skd6fF0bYsHSn6c0nveBeu9Fn3mQC7WzfMn7wteQbus/Efls9yyjK",
+      "id": 1
+    },
+    {
+      "email": "hoang@gmail.com",
+      "password": "$2a$10$J54QrKFW5b0iV.5NZwFh1.XhuU0c9UHX7ZXk4Nc8MCeV60AvyGxWm",
+      "confirmPass": "111111",
+      "id": 2
+    },
+    {
+      "email": "hoangnm@gmail.com",
+      "password": "$2a$10$DoS0fKIHfbE27K.LXARQru6f1LOUZBT7vINToitXJ6pAMHpIn81Ne",
+      "id": 3
+    },
+    {
+      "email": "hoangn@gmail.com",
+      "password": "$2a$10$4d5fqy0RiKomzeIE0qitT.PdRxGLZoZMIwkh/rRHbr924Uw4dsfbi",
+      "id": 4
+    },
+    {
+      "email": "hoangnm11111@gmail.com",
+      "password": "$2a$10$7w5Y7TjHIJTK3aVdBd0DbuXUK9qjNxk7rDvKriXj9xEq8mH5Tinky",
+      "id": 5
+    },
+    {
+      "email": "hoangm111111@gmail.com",
+      "password": "$2a$10$2i4vEZtoYbYVZkMJFGG3DuT1sHVLl9rxRB79P9xO.wCweq5xDlQNi",
+      "id": 6
+    }
+  ],
   "products": [
     {
       "id": 1,
@@ -50,7 +81,9 @@
       "brand": "Samsung",
       "category": "smartphones",
       "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
-      "images": ["https://cdn.dummyjson.com/product-images/3/1.jpg"]
+      "images": [
+        "https://cdn.dummyjson.com/product-images/3/1.jpg"
+      ]
     },
     {
       "id": 4,
@@ -552,8 +585,5 @@
         "https://cdn.dummyjson.com/product-images/30/thumbnail.jpg"
       ]
     }
-  ],
-  "total": 100,
-  "skip": 0,
-  "limit": 30
+  ]
 }

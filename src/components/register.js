@@ -1,5 +1,4 @@
 import { validRegister } from "../validations/auth.valid";
-var users = [];
 
 function register() {
   var email = document.getElementById("email").value;
@@ -13,10 +12,29 @@ function register() {
   };
 
   if (validRegister(userInfor)) {
-    users.push(userInfor);
-    localStorage.setItem("users", JSON.stringify(users));
-    alert("Dang ky thanh cong!");
-    return;
+    fetch("http://localhost:3000/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: userInfor.email,
+        password: userInfor.password,
+      }),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data?.user?.email) {
+          alert(`Success: ${data.user.email}`);
+        } else {
+          alert(`Failed: ${data}`);
+        }
+      })
+      .catch((err) => {
+        console.log(`Error: ${err}`);
+      });
   }
 }
 
