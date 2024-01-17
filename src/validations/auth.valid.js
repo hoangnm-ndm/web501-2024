@@ -1,4 +1,4 @@
-function validRegister(user) {
+export function validRegister(user) {
   if (user.email === "" || user.password === "" || user.confirmPass === "") {
     alert("khong duoc de trong!");
     return false;
@@ -14,4 +14,14 @@ function validRegister(user) {
   return true;
 }
 
-export default validRegister;
+export function validLogin(user) {
+  if (user.email === "" || user.password === "") {
+    alert("khong duoc de trong!");
+    return false;
+  }
+  if (user.password.length < 6) {
+    alert("Password qua ngan!");
+    return false;
+  }
+  return true;
+}

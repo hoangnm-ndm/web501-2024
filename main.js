@@ -8,6 +8,8 @@ import "./style.css";
 import Navigo from "navigo";
 import SignUp from "./src/pages/SignUp";
 import register from "./src/components/Register";
+import SignIn from "./src/pages/SignIn";
+import login from "./src/components/login";
 
 const router = new Navigo("/", {
   linksSelector: "a",
@@ -19,8 +21,14 @@ router.on("/about", () => render(app, AboutPage));
 router.on("/signup", () => render(app, SignUp), {
   after: () => {
     const btnRegister = document.getElementById("btnRegister");
-    console.log(btnRegister);
     btnRegister.onclick = register;
+  },
+});
+
+router.on("/signin", () => render(app, SignIn), {
+  after: () => {
+    const btnSignIn = document.getElementById("btnSignIn");
+    btnSignIn.onclick = login;
   },
 });
 router.notFound(() => render(app, NotFoundPage));
