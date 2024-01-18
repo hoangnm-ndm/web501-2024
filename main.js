@@ -13,15 +13,29 @@ import ContactPage from "./src/pages/ContactPage";
 const router = new Navigo("/", { linksSelector: "a" });
 const app = document.getElementById("app");
 
-router.on("/", () =>
-  render(app, HomePage, {
-    after: () => {
-      fetch("http://localhost:3000/products")
-        .then((res) => res.json())
-        .then((data) => console.log(data));
-    },
-  })
-);
+router.on("/", () => render(app, HomePage), {
+  after: () => {
+    const productList = document.getElementById("productList");
+    console.log(productList);
+    fetch("http://localhost:3000/products")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        productList.innerHTML = `
+          ${data
+            .map((product) => {
+              return `
+            <div>${product.title}</div>
+            <div>${product.price}</div>
+            <div>${product.description}</div>
+            <img src="${product.thumbnail}" alt="${product.title}" />
+            `;
+            })
+            .join("")}
+          `;
+      });
+  },
+});
 router.on("/about", () => render(app, AboutPage));
 router.on("/contact", () => render(app, ContactPage));
 router.on("/home", () => router.navigate("/"));

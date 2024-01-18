@@ -1,6 +1,7 @@
 const HomePage = () => {
   return `
   <h1>Sản phẩm HOT<h1>
+  <div id="productList"></div>
   `;
 };
 
