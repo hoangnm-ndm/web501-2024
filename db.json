@@ -550,8 +550,5 @@
         "https://cdn.dummyjson.com/product-images/30/thumbnail.jpg"
       ]
     }
-  ],
-  "total": 100,
-  "skip": 0,
-  "limit": 30
+  ]
 }
