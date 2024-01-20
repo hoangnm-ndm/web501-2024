@@ -1,5 +1,6 @@
 export const HomePage = () => {
   return `
-  <h2>HomePage</h2>
+  <h1>Sản phẩm bán chạy</h1>
+  <div id="productList"></div>
   `;
 };

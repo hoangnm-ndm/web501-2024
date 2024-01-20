@@ -25,7 +25,7 @@ const SignUp = () => {
       Đăng ký
     </button>
 
-    <div>Bạn đã có tài khoản? <a href="/signin">Đăng nhập</a> ngay</div>
+    <div>Bạn đã có tài khoản? <a href="/login">Đăng nhập</a> ngay</div>
   </form>
   `;
 };
