@@ -16,13 +16,12 @@ const app = document.getElementById("app");
 router.on("/", () => render(app, HomePage), {
   after: () => {
     const productList = document.getElementById("productList");
-    console.log(productList);
-    fetch("http://localhost:3000/products")
+    fetch("https://dummyjson.com/products")
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      .then(({ products }) => {
+        console.log(products);
         productList.innerHTML = `
-          ${data
+          ${products
             .map((product) => {
               return `
             <div>${product.title}</div>
