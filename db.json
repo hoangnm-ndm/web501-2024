@@ -1,5 +1,11 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "wd18334@gmail.com",
+      "password": "$2a$10$iPBQW8.FMmp63cZ9PiCnZ.uqop7XWSxSdG4Asc4uee7UY6ct3FEXa",
+      "id": 1
+    }
+  ],
   "products": [
     {
       "id": 1,
@@ -49,7 +55,9 @@
       "brand": "Samsung",
       "category": "smartphones",
       "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
-      "images": ["https://cdn.dummyjson.com/product-images/3/1.jpg"]
+      "images": [
+        "https://cdn.dummyjson.com/product-images/3/1.jpg"
+      ]
     },
     {
       "id": 4,

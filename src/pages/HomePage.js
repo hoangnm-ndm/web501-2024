@@ -1,13 +1,11 @@
 const HomePage = () => {
-  return `
-  <h1>Sản phẩm HOT<h1>
-  <div id="productList"></div>
+  return /*html*/ `
+    <h1>Sản phẩm HOT<h1>
+    <div id="productList"></div>
   `;
 };
 
 export default HomePage;
-// export default HomePage;
-// export default HomePage2;
 
 /*
  * 1. Chỉ export default được 1 lần.

@@ -9,31 +9,14 @@ import register from "./src/components/Register";
 import SignInPage from "./src/pages/SignInPage";
 import signIn from "./src/components/SignIn";
 import ContactPage from "./src/pages/ContactPage";
+import ProductList from "./src/components/ProductList";
 
 const router = new Navigo("/", { linksSelector: "a" });
 const app = document.getElementById("app");
 
 router.on("/", () => render(app, HomePage), {
-  after: () => {
-    const productList = document.getElementById("productList");
-    console.log(productList);
-    fetch("http://localhost:3000/products")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        productList.innerHTML = `
-          ${data
-            .map((product) => {
-              return `
-            <div>${product.title}</div>
-            <div>${product.price}</div>
-            <div>${product.description}</div>
-            <img src="${product.thumbnail}" alt="${product.title}" />
-            `;
-            })
-            .join("")}
-          `;
-      });
+  after() {
+    ProductList();
   },
 });
 router.on("/about", () => render(app, AboutPage));
