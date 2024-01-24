@@ -50,6 +50,11 @@
       "email": "qqqq@gmail.com",
       "password": "$2a$10$0e.JQPDCWNonhRR1WYqKmepgR/fTw2nT6/SrtdgZWPEJQ0aPKiSDq",
       "id": 10
+    },
+    {
+      "email": "dssdsd@gmail.com",
+      "password": "$2a$10$Qmkf1AOAr8xH/uJJTk28nuxHXTD0j6oRWgx28vz1sfxhiGpgiVMdq",
+      "id": 11
     }
   ],
   "products": [
