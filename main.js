@@ -1,17 +1,15 @@
-import "./style.css";
-import HomePage from "./src/pages/HomePage";
-import Navigo from "navigo";
-import AboutPage from "./src/pages/AboutPage";
-import NotFoundPage from "./src/pages/NotFoundPage";
-import render from "./src/utils/common";
-import SignUpPage from "./src/pages/SignUpPage";
-import register from "./src/components/Register";
-import SignInPage from "./src/pages/SignInPage";
-import signIn from "./src/components/SignIn";
-import ContactPage from "./src/pages/ContactPage";
 import ProductList from "./src/components/ProductList";
+import register from "./src/components/Register";
+import signIn from "./src/components/SignIn";
+import AboutPage from "./src/pages/AboutPage";
+import ContactPage from "./src/pages/ContactPage";
+import HomePage from "./src/pages/HomePage";
+import NotFoundPage from "./src/pages/NotFoundPage";
+import SignInPage from "./src/pages/SignInPage";
+import SignUpPage from "./src/pages/SignUpPage";
+import { render, router } from "./src/utils/common";
+import "./style.css";
 
-const router = new Navigo("/", { linksSelector: "a" });
 const app = document.getElementById("app");
 
 router.on("/", () => render(app, HomePage), {

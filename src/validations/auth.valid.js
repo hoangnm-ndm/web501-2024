@@ -1,5 +1,5 @@
 export const registerValid = (user) => {
-  if (!user.username || !user.password || !user.confirmPass) {
+  if (!user.email || !user.password || !user.confirmPass) {
     alert("khong duoc bo trong!");
     return false;
   }
@@ -17,7 +17,7 @@ export const registerValid = (user) => {
 };
 
 export const signInValid = (user) => {
-  if (!user.username || !user.password) {
+  if (!user.email || !user.password) {
     alert("khong duoc bo trong!");
     return false;
   }

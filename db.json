@@ -4,6 +4,36 @@
       "email": "wd18334@gmail.com",
       "password": "$2a$10$iPBQW8.FMmp63cZ9PiCnZ.uqop7XWSxSdG4Asc4uee7UY6ct3FEXa",
       "id": 1
+    },
+    {
+      "email": "hoang@gmail.com",
+      "password": "$2a$10$0oqvbgdtvMhNpK1NdefapO9gNnw2b/d1TYoK4QFrnTvc/cmEwQd4O",
+      "role": "member",
+      "address": "",
+      "cart": [],
+      "history": [],
+      "comment": [],
+      "id": 2
+    },
+    {
+      "email": "hoang1@gmail.com",
+      "password": "$2a$10$hLxJ4Ur9WTnyNi1S5bUIxeXqvz7N5xNBiwzsoMWhi2A3/JS7Zwm2W",
+      "role": "admin",
+      "address": "",
+      "cart": [],
+      "history": [],
+      "comment": [],
+      "id": 3
+    },
+    {
+      "email": "hoang555@gmail.com",
+      "password": "$2a$10$r3F8N0gPl6afB0NOQsw/f.702QZOO95r9XdSU2/Fdu5NbX43t.FtC",
+      "role": "member",
+      "address": "",
+      "cart": [],
+      "history": [],
+      "comment": [],
+      "id": 4
     }
   ],
   "products": [

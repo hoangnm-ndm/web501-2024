@@ -3,12 +3,12 @@ const SignUpPage = () => {
   <form action="">
   <h1>Đăng ký</h1>
   <div class="mb-3">
-    <label for="username" class="form-label">Username</label>
+    <label for="email" class="form-label">Your email</label>
     <input
-      type="text"
+      type="email"
       class="form-control"
-      id="username"
-      placeholder="your username..."
+      id="email"
+      placeholder="Your email..."
     />
   </div>
   <div class="mb-3">
