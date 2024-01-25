@@ -34,6 +34,36 @@
       "history": [],
       "comment": [],
       "id": 4
+    },
+    {
+      "email": "hoang666@gmail.com",
+      "password": "$2a$10$3r5gJWog6.jyOQVQzjLwwu1V.ZGh/an82eN1LjQEgq7RdZEealfGy",
+      "role": "member",
+      "address": "",
+      "cart": [],
+      "history": [],
+      "comment": [],
+      "id": 5
+    },
+    {
+      "email": "hoang888@gmail.com",
+      "password": "$2a$10$YFkQeaeSs9hMs58idiRRv.AMsZHqenuZce1o.qmxc7/maYIsaD8OW",
+      "role": "member",
+      "address": "",
+      "cart": [],
+      "history": [],
+      "comment": [],
+      "id": 6
+    },
+    {
+      "email": "hoang000@gmail.com",
+      "password": "$2a$10$EbVXya50XKKpw/eT9Z3RAOuvDXqOKiUiPi82UBv7COFJHLApCv5WK",
+      "role": "member",
+      "address": "",
+      "cart": [],
+      "history": [],
+      "comment": [],
+      "id": 7
     }
   ],
   "products": [
