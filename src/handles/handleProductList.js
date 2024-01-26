@@ -1,3 +1,6 @@
+import instance from "../apis";
+import api from "../apis";
+
 const handleProductList = async () => {
   const productList = document.getElementById("productList");
   try {
@@ -8,8 +11,16 @@ const handleProductList = async () => {
     //   .catch((error) => console.log(error));
 
     // Cú pháp async/await:
-    const res = await fetch("http://localhost:3000/products");
-    const data = await res.json();
+    // const res = await fetch("http://localhost:3000/products");
+    // const data = await res.json();
+
+    // Cú pháp dùng axios
+    // const { data } = await axios.get("http://localhost:3000/products");
+    // ? Destructuring
+
+    // Dùng instance của axios:
+    const { data } = await instance.get("/products");
+
     if (data) {
       const contentHTML = data
         .map(

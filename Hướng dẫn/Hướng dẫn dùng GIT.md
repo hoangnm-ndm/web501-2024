@@ -4,15 +4,19 @@ https://git-scm.com/download/win
 
 https://git-scm.com/download/mac
 
-Install xong kiểm tra đã cài đặt thành công bằng cách mở terminal và gõ lệnh:
+https://git-scm.com/download/linux
 
-`git -v`
+Install xong kiểm tra đã cài đặt thành công bằng cách mở terminal và gõ lệnh: `git -v`
 
-# Bước 2. đăng ký tài khoản tại:
+# Bước 2. Đăng ký tài khoản tại:
 
 https://github.com/
+(có thể lựa chọn dùng gitlab thay cho github)
 
-# Bước 3. Config git https:
+# Bước 3. Config git https (không bắt buộc):
+
+- Công đoạn này áp dụng cho việc truy cập các kho lưu trữ online bằng phương thức HTTP thay cho sử dụng giao thức SSH.
+- Bạn có thể sử dụng 1 trong 2 giao thức này.
 
 Mở terminal và gõ:
 
@@ -33,7 +37,7 @@ hoặc:
 
 `git config user.email`
 
-# Bước 4. Cấu hình SSH Key:
+# Bước 4. Cấu hình SSH Key (suggest):
 
 Cấu hình SSH key cho Git là một phương pháp xác thực bảo mật để bạn có thể truy cập vào kho lưu trữ Git từ xa mà không cần phải nhập mật khẩu mỗi lần thực hiện các hoạt động Git như push, pull, clone, hoặc commit.
 
@@ -86,3 +90,7 @@ Copy đoạn mã hiển thị ra và paste vào kho cấu hình ssh-key của m�
 - Liệt kê ra các commit, thời gian và tác giả của những commit đó:
 
   `git log`
+
+- Tạo ra 1 nhánh mới và đồng thời di chuyển sang nhánh mới đó (mang theo toàn bộ source code từ nhánh cũ):
+
+  `git checkout -b new_brand`
