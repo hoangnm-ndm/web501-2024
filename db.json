@@ -55,6 +55,15 @@
       "email": "dssdsd@gmail.com",
       "password": "$2a$10$Qmkf1AOAr8xH/uJJTk28nuxHXTD0j6oRWgx28vz1sfxhiGpgiVMdq",
       "id": 11
+    },
+    {
+      "email": "hoang999@gmail.com",
+      "password": "$2a$10$FfK5gnfG1F8lGdkq6dXu7uHnK5ofaw7OFgfeH2OKsRbbQkwFO1vx.",
+      "role": "member",
+      "cart": [],
+      "address": "",
+      "phoneNumber": "",
+      "id": 12
     }
   ],
   "products": [
