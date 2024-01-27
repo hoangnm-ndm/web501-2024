@@ -2,13 +2,13 @@ import instance from "../api";
 import { router } from "../utils/common";
 import { registerValid } from "../validations/auth.valid";
 
-function register() {
+async function register() {
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
   var confirmPass = document.getElementById("confirmPass").value;
   var userInfor = {
-    email: email,
-    password: password,
+    email,
+    password,
   };
 
   if (registerValid({ ...userInfor, confirmPass })) {
@@ -41,28 +41,52 @@ function register() {
     //   })
     //   .catch((err) => console.log(err));
 
-    instance
-      .post("/register", {
+    // // ! Sử dụng axios
+    // instance
+    //   .post("/register", {
+    //     ...userInfor,
+    //     role: "member",
+    //     address: "",
+    //     cart: [],
+    //     history: [],
+    //     comment: [],
+    //     phoneNumber: "",
+    //   })
+    //   .then(({ data }) => {
+    //     // ! destructuring
+    //     if (data.user) {
+    //       const valueCofirm = confirm(
+    //         "Dang ky thanh cong, co muon sang trang dang nhap khong?"
+    //       );
+    //       if (valueCofirm) {
+    //         router.navigate("/signin");
+    //       }
+    //     }
+    //   })
+    //   .catch((err) => alert(`Error: ${err.response.data}`));
+
+    // ! Sử dụng axios kết hợp cú pháp async/await
+    try {
+      const { data } = await instance.post("/register", {
         ...userInfor,
         role: "member",
         address: "",
         cart: [],
         history: [],
         comment: [],
-      })
-      .then(({ data }) => {
-        // ! destructuring
-        if (data.user) {
-          const valueCofirm = confirm(
-            "Dang ky thanh cong, co muon sang trang dang nhap khong?"
-          );
-          if (valueCofirm) {
-            router.navigate("/signin");
-          }
-        } else {
-          alert(`Error: ${data}`);
-        }
+        phoneNumber: "",
       });
+      if (data.user) {
+        const valueCofirm = confirm(
+          "Dang ky thanh cong, co muon sang trang dang nhap khong?"
+        );
+        if (valueCofirm) {
+          router.navigate("/signin");
+        }
+      }
+    } catch (err) {
+      alert(`Error: ${err.response.data}`);
+    }
   }
 }
 

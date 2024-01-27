@@ -64,6 +64,50 @@
       "history": [],
       "comment": [],
       "id": 7
+    },
+    {
+      "email": "hoang999@gmail.com",
+      "password": "$2a$10$b7HWNwLXLnJGtQSh1.7nOucjY4hqFxuztKb9vCz7c.7Vz/dlEGefa",
+      "role": "member",
+      "address": "",
+      "cart": [],
+      "history": [],
+      "comment": [],
+      "phoneNumber": "",
+      "id": 8
+    },
+    {
+      "email": "hoang99@gmail.com",
+      "password": "$2a$10$s34T3TvusCGUhgr0Zl1HQu32.UtWdGv/ihAme8HGfVaIuOsxcbGoi",
+      "role": "member",
+      "address": "",
+      "cart": [],
+      "history": [],
+      "comment": [],
+      "phoneNumber": "",
+      "id": 9
+    },
+    {
+      "email": "locfuho@gmail.com",
+      "password": "$2a$10$YBVzIL5LVuHajZUAavoi0.6cr3AR3iISGjJpjh8jk8XKZaPNpRp6O",
+      "role": "member",
+      "address": "",
+      "cart": [],
+      "history": [],
+      "comment": [],
+      "phoneNumber": "",
+      "id": 10
+    },
+    {
+      "email": "adasdas@gmail.com",
+      "password": "$2a$10$UJgeHoc84.POy4TsHqAL9.KWkrg.TSvQ8rqM.L88xOiuhsLlKWz22",
+      "role": "member",
+      "address": "",
+      "cart": [],
+      "history": [],
+      "comment": [],
+      "phoneNumber": "",
+      "id": 11
     }
   ],
   "products": [
