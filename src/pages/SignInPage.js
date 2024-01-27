@@ -3,12 +3,12 @@ const SignInPage = () => {
   <form action="">
     <h1>Please Login</h1>
     <div class="mb-3">
-      <label for="username" class="form-label">Username</label>
+      <label for="email" class="form-label">Your mail:</label>
       <input
-        type="text"
+        type="email"
         class="form-control"
-        id="username"
-        placeholder="your username..."
+        id="email"
+        placeholder="your email..."
       />
     </div>
     <div class="mb-3">

@@ -1,23 +1,30 @@
+import instance from "../api";
 import { signInValid } from "../validations/auth.valid";
 
-function signIn() {
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
+async function signIn() {
+  try {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
 
-  const user = {
-    username,
-    password,
-  };
+    const user = {
+      email,
+      password,
+    };
 
-  if (signInValid(user)) {
-    if (localStorage.getItem("users")) {
-      const usersDatabase = JSON.parse(localStorage.getItem("users"));
-      usersDatabase.some((item) => {
-        if (item.username === username && item.password === password) {
-          alert("Dang nhap thanh cong");
+    if (signInValid(user)) {
+      const { data } = await instance.post("/login", user);
+      if (data.user) {
+        sessionStorage.setItem("user", JSON.stringify(data));
+        const valueCofirm = confirm(
+          "Dang nhap thanh cong, co muon sang trang mua sắm khong?"
+        );
+        if (valueCofirm) {
+          router.navigate("/");
         }
-      });
+      }
     }
+  } catch (error) {
+    alert(`Error: ${err.response.data}`);
   }
 }
 export default signIn;

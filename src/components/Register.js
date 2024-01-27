@@ -12,59 +12,6 @@ async function register() {
   };
 
   if (registerValid({ ...userInfor, confirmPass })) {
-    // fetch("http://localhost:3000/register", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     ...userInfor,
-    //     role: "member",
-    //     address: "",
-    //     cart: [],
-    //     history: [],
-    //     comment: [],
-    //   }),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     if (data.user) {
-    //       const valueCofirm = confirm(
-    //         "Dang ky thanh cong, co muon sang trang dang nhap khong?"
-    //       );
-    //       if (valueCofirm) {
-    //         router.navigate("/signin");
-    //       }
-    //     } else {
-    //       alert(`Error: ${data}`);
-    //     }
-    //   })
-    //   .catch((err) => console.log(err));
-
-    // // ! Sử dụng axios
-    // instance
-    //   .post("/register", {
-    //     ...userInfor,
-    //     role: "member",
-    //     address: "",
-    //     cart: [],
-    //     history: [],
-    //     comment: [],
-    //     phoneNumber: "",
-    //   })
-    //   .then(({ data }) => {
-    //     // ! destructuring
-    //     if (data.user) {
-    //       const valueCofirm = confirm(
-    //         "Dang ky thanh cong, co muon sang trang dang nhap khong?"
-    //       );
-    //       if (valueCofirm) {
-    //         router.navigate("/signin");
-    //       }
-    //     }
-    //   })
-    //   .catch((err) => alert(`Error: ${err.response.data}`));
-
     // ! Sử dụng axios kết hợp cú pháp async/await
     try {
       const { data } = await instance.post("/register", {
@@ -76,6 +23,7 @@ async function register() {
         comment: [],
         phoneNumber: "",
       });
+      //! http://localhost:3000/register, body: {email, password} -> a request tuân theo chuẩn restAPI
       if (data.user) {
         const valueCofirm = confirm(
           "Dang ky thanh cong, co muon sang trang dang nhap khong?"
