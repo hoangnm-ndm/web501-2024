@@ -4,20 +4,6 @@ import api from "../apis";
 const handleProductList = async () => {
   const productList = document.getElementById("productList");
   try {
-    // Cú pháp cũ:
-    // fetch("http://localhost:3000/products")
-    //   .then((res) => res.json())
-    //   .then((data) => console.log(data))
-    //   .catch((error) => console.log(error));
-
-    // Cú pháp async/await:
-    // const res = await fetch("http://localhost:3000/products");
-    // const data = await res.json();
-
-    // Cú pháp dùng axios
-    // const { data } = await axios.get("http://localhost:3000/products");
-    // ? Destructuring
-
     // Dùng instance của axios:
     const { data } = await instance.get("/products");
 

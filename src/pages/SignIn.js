@@ -16,7 +16,7 @@ const SignIn = () => {
     <input type="password" class="form-control" id="password" />
   </div>
 
-  <button type="button" id="btnSignIn" class="btn btn-primary w-100">
+  <button type="button" id="btnLogin" class="btn btn-primary w-100">
     Login
   </button>
 </form>
