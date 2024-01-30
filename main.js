@@ -1,5 +1,6 @@
 import register from "./src/components/Register";
 import signIn from "./src/components/SignIn";
+import handleAdmin from "./src/components/handleAdmin";
 import handleProductList from "./src/components/handleProductList";
 import AboutPage from "./src/pages/AboutPage";
 import IndexAdmin from "./src/pages/Admin/IndexAdmin";
@@ -46,7 +47,7 @@ router.on("/admin", () => render(app, IndexAdmin), {
     }
   },
   after() {
-    console.log("after");
+    handleAdmin();
   },
 });
 
