@@ -1,3 +1,5 @@
+import Footer from "../components/Footer";
+
 const SignUpPage = () => {
   return /*html*/ `
   <form action="">
@@ -40,6 +42,7 @@ const SignUpPage = () => {
     </button>
   </div>
 </form>
+${Footer()}
   `;
 };
 

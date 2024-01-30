@@ -9,6 +9,10 @@ header {
   width: 100%;
   border-bottom: 1px solid #ccc;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  z-index: 99;
 }
 
 .nav {
@@ -38,7 +42,7 @@ header {
 }
 
 #app {
-  margin-top: 24px;
+  margin-top: 100px;
 }
 
 form {

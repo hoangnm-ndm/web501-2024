@@ -1,7 +1,10 @@
+import Footer from "../components/Footer";
+
 const HomePage = () => {
   return /*html*/ `
     <h1>Sản phẩm HOT<h1>
     <div id="productList"></div>
+    ${Footer()}
   `;
 };
 

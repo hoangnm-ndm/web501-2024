@@ -1,3 +1,5 @@
+import Footer from "../components/Footer";
+
 const SignInPage = () => {
   return /*html*/ ` 
   <form action="">
@@ -30,7 +32,9 @@ const SignInPage = () => {
         Đăng nhập
       </button>
     </div>
-  </form>`;
+  </form>
+  ${Footer()}
+  `;
 };
 
 export default SignInPage;

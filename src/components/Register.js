@@ -12,7 +12,6 @@ async function register() {
   };
 
   if (registerValid({ ...userInfor, confirmPass })) {
-    // ! Sử dụng axios kết hợp cú pháp async/await
     try {
       const { data } = await instance.post("/register", {
         ...userInfor,
@@ -23,7 +22,6 @@ async function register() {
         comment: [],
         phoneNumber: "",
       });
-      //! http://localhost:3000/register, body: {email, password} -> a request tuân theo chuẩn restAPI
       if (data.user) {
         const valueCofirm = confirm(
           "Dang ky thanh cong, co muon sang trang dang nhap khong?"

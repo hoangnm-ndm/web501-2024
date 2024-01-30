@@ -1,71 +1,6 @@
 {
   "users": [
     {
-      "email": "wd18334@gmail.com",
-      "password": "$2a$10$iPBQW8.FMmp63cZ9PiCnZ.uqop7XWSxSdG4Asc4uee7UY6ct3FEXa",
-      "id": 1
-    },
-    {
-      "email": "hoang@gmail.com",
-      "password": "$2a$10$0oqvbgdtvMhNpK1NdefapO9gNnw2b/d1TYoK4QFrnTvc/cmEwQd4O",
-      "role": "member",
-      "address": "",
-      "cart": [],
-      "history": [],
-      "comment": [],
-      "id": 2
-    },
-    {
-      "email": "hoang1@gmail.com",
-      "password": "$2a$10$hLxJ4Ur9WTnyNi1S5bUIxeXqvz7N5xNBiwzsoMWhi2A3/JS7Zwm2W",
-      "role": "admin",
-      "address": "",
-      "cart": [],
-      "history": [],
-      "comment": [],
-      "id": 3
-    },
-    {
-      "email": "hoang555@gmail.com",
-      "password": "$2a$10$r3F8N0gPl6afB0NOQsw/f.702QZOO95r9XdSU2/Fdu5NbX43t.FtC",
-      "role": "member",
-      "address": "",
-      "cart": [],
-      "history": [],
-      "comment": [],
-      "id": 4
-    },
-    {
-      "email": "hoang666@gmail.com",
-      "password": "$2a$10$3r5gJWog6.jyOQVQzjLwwu1V.ZGh/an82eN1LjQEgq7RdZEealfGy",
-      "role": "member",
-      "address": "",
-      "cart": [],
-      "history": [],
-      "comment": [],
-      "id": 5
-    },
-    {
-      "email": "hoang888@gmail.com",
-      "password": "$2a$10$YFkQeaeSs9hMs58idiRRv.AMsZHqenuZce1o.qmxc7/maYIsaD8OW",
-      "role": "member",
-      "address": "",
-      "cart": [],
-      "history": [],
-      "comment": [],
-      "id": 6
-    },
-    {
-      "email": "hoang000@gmail.com",
-      "password": "$2a$10$EbVXya50XKKpw/eT9Z3RAOuvDXqOKiUiPi82UBv7COFJHLApCv5WK",
-      "role": "member",
-      "address": "",
-      "cart": [],
-      "history": [],
-      "comment": [],
-      "id": 7
-    },
-    {
       "email": "hoang999@gmail.com",
       "password": "$2a$10$b7HWNwLXLnJGtQSh1.7nOucjY4hqFxuztKb9vCz7c.7Vz/dlEGefa",
       "role": "member",
@@ -99,9 +34,9 @@
       "id": 10
     },
     {
-      "email": "adasdas@gmail.com",
-      "password": "$2a$10$UJgeHoc84.POy4TsHqAL9.KWkrg.TSvQ8rqM.L88xOiuhsLlKWz22",
-      "role": "member",
+      "email": "admin@gmail.com",
+      "password": "$2a$10$hJRmL2QJ2qH6uHSXHmyDOewOtDVET1FXQ4bvMwBgqMk/yxt7Imj7m",
+      "role": "admin",
       "address": "",
       "cart": [],
       "history": [],
@@ -159,9 +94,7 @@
       "brand": "Samsung",
       "category": "smartphones",
       "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
-      "images": [
-        "https://cdn.dummyjson.com/product-images/3/1.jpg"
-      ]
+      "images": ["https://cdn.dummyjson.com/product-images/3/1.jpg"]
     },
     {
       "id": 4,
