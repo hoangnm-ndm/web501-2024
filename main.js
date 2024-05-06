@@ -37,3 +37,22 @@ const btn2Element = document.getElementById("btn2");
 
 // ! Cách 3:
 btn2Element.addEventListener("click", hello);
+
+// TODO: Khai báo 1 object thông tin cá nhân của sinh viên trong js. Khi bấm nút "Show Infor" thì hiển thị các thông tin này ra html.
+
+const myInfor = {
+  name: "Nguyễn Minh Hoàng",
+  age: 18,
+  gender: "male",
+  email: "hoangnm62@fpt.edu.vn",
+  address: "Lục Nam - Bắc Giang",
+};
+
+const infor = document.createElement("div");
+infor.innerHTML = /*html*/ `
+  <h2>${myInfor.name}</h2>
+  <p>Address: ${myInfor.address}</p>
+  <p>Age: ${myInfor.age}</p>
+  <p>Gender: ${myInfor.gender}</p>
+`;
+document.body.appendChild(infor);
