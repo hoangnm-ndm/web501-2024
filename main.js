@@ -1,56 +1,39 @@
-import "./style.css";
-import HomePage from "./src/pages/HomePage";
-import Navigo from "navigo";
-import AboutPage from "./src/pages/AboutPage";
-import NotFoundPage from "./src/pages/NotFoundPage";
-import render from "./src/utils/common";
-import SignUpPage from "./src/pages/SignUpPage";
-import register from "./src/components/Register";
-import SignInPage from "./src/pages/SignInPage";
-import signIn from "./src/components/SignIn";
-import ContactPage from "./src/pages/ContactPage";
+console.log("hello nhung code o trong main.js");
 
-const router = new Navigo("/", { linksSelector: "a" });
-const app = document.getElementById("app");
-
-router.on("/", () => render(app, HomePage), {
-  after: () => {
-    const productList = document.getElementById("productList");
-    fetch("https://dummyjson.com/products")
-      .then((res) => res.json())
-      .then(({ products }) => {
-        console.log(products);
-        productList.innerHTML = `
-          ${products
-            .map((product) => {
-              return `
-            <div>${product.title}</div>
-            <div>${product.price}</div>
-            <div>${product.description}</div>
-            <img src="${product.thumbnail}" alt="${product.title}" />
-            `;
-            })
-            .join("")}
-          `;
-      });
+const myDocument = {
+  html: {
+    head: {},
+    body: {
+      div: {
+        div: {
+          children: "Hello",
+        },
+      },
+      ul: {
+        li: {
+          children: "item 1",
+        },
+        li: {
+          children: "item 2",
+        },
+      },
+    },
   },
-});
-router.on("/about", () => render(app, AboutPage));
-router.on("/contact", () => render(app, ContactPage));
-router.on("/home", () => router.navigate("/"));
-router.on("/signup", () => render(app, SignUpPage), {
-  after: () => {
-    const btnRegister = document.getElementById("btnRegister");
-    btnRegister.onclick = register;
-  },
-});
+};
 
-router.on("/signin", () => render(app, SignInPage), {
-  after: () => {
-    const btnSignIn = document.getElementById("btnSignIn");
-    btnSignIn.onclick = signIn;
-  },
-});
+console.log(myDocument);
 
-router.notFound(() => render(app, NotFoundPage));
-router.resolve();
+// TODO: Dùng 3 cách xử lý sự kiện để tạo ra nút bấm, khi bấm nút gọi đến function gửi lời chào đến giảng viên.
+
+function hello() {
+  console.log("Xin chao ca lop!");
+}
+
+const btn2Element = document.getElementById("btn2");
+// console.log(btn2Element);
+
+// ! Cách 2:
+// btn2Element.onclick = hello;
+
+// ! Cách 3:
+btn2Element.addEventListener("click", hello);
