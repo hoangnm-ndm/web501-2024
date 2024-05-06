@@ -1,56 +1,48 @@
-import "./style.css";
-import HomePage from "./src/pages/HomePage";
-import Navigo from "navigo";
-import AboutPage from "./src/pages/AboutPage";
-import NotFoundPage from "./src/pages/NotFoundPage";
-import render from "./src/utils/common";
-import SignUpPage from "./src/pages/SignUpPage";
-import register from "./src/components/Register";
-import SignInPage from "./src/pages/SignInPage";
-import signIn from "./src/components/SignIn";
-import ContactPage from "./src/pages/ContactPage";
+console.log("Hello ca lop nhưng ở trong main.js");
 
-const router = new Navigo("/", { linksSelector: "a" });
-const app = document.getElementById("app");
+const myInfor = {
+  name: "Nguyễn Minh Hoàng",
+  age: 32,
+  address: "Bắc Giang",
+  gender: "male",
+  email: "hoangnm62@gmail.com",
+};
 
-router.on("/", () => render(app, HomePage), {
-  after: () => {
-    const productList = document.getElementById("productList");
-    fetch("https://dummyjson.com/products")
-      .then((res) => res.json())
-      .then(({ products }) => {
-        console.log(products);
-        productList.innerHTML = `
-          ${products
-            .map((product) => {
-              return `
-            <div>${product.title}</div>
-            <div>${product.price}</div>
-            <div>${product.description}</div>
-            <img src="${product.thumbnail}" alt="${product.title}" />
-            `;
-            })
-            .join("")}
-          `;
-      });
+const content = /*html*/ `
+  <div class="infor-card">
+    <h2>${myInfor.name}</h2>
+    <p>Tuổi: ${myInfor.age} </p>
+    <p>Địa chỉ: ${myInfor.address}</p>
+    <p>Email: ${myInfor.email}</p>
+    <p>Giới tính: ${myInfor.gender}</p>
+  </div>
+`;
+// ! template string
+console.log(typeof content);
+const inforElement = document.getElementById("infor");
+inforElement.innerHTML = content;
+
+const myDocument = {
+  html: {
+    head: {},
+    body: {
+      div: {
+        children: "Hello ca lop!",
+      },
+    },
   },
-});
-router.on("/about", () => render(app, AboutPage));
-router.on("/contact", () => render(app, ContactPage));
-router.on("/home", () => router.navigate("/"));
-router.on("/signup", () => render(app, SignUpPage), {
-  after: () => {
-    const btnRegister = document.getElementById("btnRegister");
-    btnRegister.onclick = register;
-  },
-});
+};
 
-router.on("/signin", () => render(app, SignInPage), {
-  after: () => {
-    const btnSignIn = document.getElementById("btnSignIn");
-    btnSignIn.onclick = signIn;
-  },
-});
+console.log(myDocument);
 
-router.notFound(() => render(app, NotFoundPage));
-router.resolve();
+function hello() {
+  console.warn("Ai buon ngu thi di rua mat di!");
+}
+
+// ! Cach 2: Xu ly su kien
+const btn2Element = document.getElementById("btn2");
+console.log(typeof btn2Element);
+// btn2Element.onclick = hello;
+
+// ! Cach 3: Xu ly su kien
+btn2Element.addEventListener("click", hello);
