@@ -20,8 +20,20 @@ const content = `
 
 // ! Cach 1:
 const inforElement = document.getElementById("infor");
-inforElement.innerHTML = content;
+console.log(typeof inforElement);
+// inforElement.innerHTML = content;
 
 // ! Cach 2:
 const inforElement2 = document.createElement("div");
-inforElement2.innerHTML = content;
+
+function showInfor() {
+  inforElement.innerHTML = content;
+}
+
+const btnShowElement = document.getElementById("btnShow");
+console.log(btnShowElement);
+btnShowElement.onclick = showInfor;
+
+// ! Cach3: dung addEventListener
+const btnShow3Element = document.getElementById("btnShow3");
+btnShow3Element.addEventListener("click", showInfor);
