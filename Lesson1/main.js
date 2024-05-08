@@ -17,7 +17,7 @@ const content = /*html*/ `
     <p>Giới tính: ${myInfor.gender}</p>
   </div>
 `;
-// ! template string
+// ! `` được gọi là template string
 console.log(typeof content);
 const inforElement = document.getElementById("infor");
 inforElement.innerHTML = content;
