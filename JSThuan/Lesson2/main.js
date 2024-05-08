@@ -35,3 +35,19 @@ console.log(sum4(20, 30));
 console.log(showInfor());
 
 // TODO: Viết 1 arrow function nhập vào số nguyên dương n, in ra mảng tất cả các số lẻ từ 1 đến n.
+
+const timSoLe = (n) => {
+  if (typeof n !== "number" || n <= 0) {
+    console.log("n khong hop le!");
+    return;
+  }
+  const result = [];
+  for (let i = 1; i <= n; i++) {
+    if (i % 2 !== 0) {
+      result.push(i);
+    }
+  }
+  console.log(`Ket qua cua phep tinh la: `, result);
+};
+
+timSoLe(100);
