@@ -36,3 +36,25 @@ console.log(sum2(20, 30));
 console.log(showInfor());
 
 // TODO: Viết hàm tinhTongNSo nhập vào n, và trả về tổng các số nguyên từ 1 đến n.
+
+const tinhTongNSo = (n) => {
+  if (typeof n !== "number" || n <= 0) {
+    console.log("n khong hop le");
+    return;
+  }
+  let count = 0;
+
+  for (let i = 1; i <= n; i++) {
+    if (i % 2 === 0) {
+      count += i;
+    }
+  }
+  return count;
+};
+console.log(tinhTongNSo(5));
+
+const myFunction = () => () => () => {};
+
+// ! IIFE là hàm thực hiện ngay khi khai báo
+// ! ( khaibaoham)(thamso can truyen neu co)
+(() => console.log("hello"))();
