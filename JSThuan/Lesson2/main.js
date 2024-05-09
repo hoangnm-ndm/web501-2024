@@ -53,8 +53,6 @@ const tinhTongNSo = (n) => {
 };
 console.log(tinhTongNSo(5));
 
-const myFunction = () => () => () => {};
-
 // ! IIFE là hàm thực hiện ngay khi khai báo
 // ! ( khaibaoham)(thamso can truyen neu co)
 (() => console.log("hello"))();
