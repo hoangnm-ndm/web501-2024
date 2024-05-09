@@ -37,7 +37,24 @@ console.log(showInfor());
 
 const tinhTong2 = (a, b) => {
   //  CODE CUA SINH VIEN
-  return;
+  // validation
+  if (typeof a !== "number" || typeof b !== "number" || a > b) {
+    console.log("du lieu ko hop le!");
+    return;
+  }
+  let tong = 0;
+  for (let i = a; i <= b; i++) {
+    if (i % 2 == 0) {
+      tong += i;
+    }
+  }
+  return tong;
 };
+console.log("hello");
+
+console.log(tinhTong2(0, 6));
+
+// ! nice to meet you
+//!Rất vui được gặp bạn
 
 // 5 -> 10: 6 + 8 + 10 = 24
