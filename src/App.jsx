@@ -1,28 +1,18 @@
 import React from "react";
 import "./App.css";
+import Header from "./components/Header";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
     <>
       {/* React Fragment */}
-      <header>
-        <ul>
-          <li>
-            <a href="">Home</a>
-          </li>
-          <li>
-            <a href="">About</a>
-          </li>
-          <li>
-            <a href="">Shop</a>
-          </li>
-        </ul>
-      </header>
+      <Header />
       <main>
         <h1>Hello ca lop!</h1>
         <p>My name is Hoang</p>
       </main>
-      <footer>Website by hoangnm62</footer>
+      <Footer />
     </>
   );
 }
