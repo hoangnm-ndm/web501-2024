@@ -1,3 +1,15 @@
+import React from "react";
+import "./App.css";
+import Header from "./components/Header";
+import HomePage from "./pages/HomePage";
+import Footer from "./components/Footer";
+
 export default function App() {
-  return <button>Click me</button>;
+  return (
+    <>
+      <Header />
+      <HomePage />
+      <Footer />
+    </>
+  );
 }
