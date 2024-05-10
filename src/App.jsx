@@ -9,8 +9,7 @@ function App() {
       {/* React Fragment */}
       <Header />
       <main>
-        <h1>Hello ca lop!</h1>
-        <p>My name is Hoang</p>
+        <p>Noi dung trang web</p>
       </main>
       <Footer />
     </>
