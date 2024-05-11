@@ -1,5 +1,7 @@
 import React from "react";
 import "./App.css";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -19,13 +21,12 @@ function App() {
     // )
 
     // ! Cach 2: viet = JSX (Javascript XML)
-    <div className="infor">
-      <ul className="list">
-        <li className="item">item1</li>
-        <li className="item">item2</li>
-        <li className="item">item3</li>
-      </ul>
-    </div>
+    <>
+      {/* {Header()} */}
+      <Header />
+      <main>Noi dung trang main</main>
+      <Footer />
+    </>
   );
 }
 
