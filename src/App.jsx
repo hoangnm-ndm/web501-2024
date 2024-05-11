@@ -3,6 +3,8 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import About from "./pages/About";
+import Login from "./pages/Login";
+import Login2 from "./pages/Login2";
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
     <div>
       <Header />
       <main>
+        <Login />
+        <Login2 />
         <About />
         <button type="button" className="btn btn-primary">
           Primary
