@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 100px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+main {
+  margin-top: 140px;
+}
+
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  background-color: #eee;
+  height: 40px;
+}

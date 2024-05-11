@@ -1,4 +1,4 @@
-export const Header = () => {
+const Header = () => {
   return (
     <header>
       <ul>
@@ -21,3 +21,7 @@ export const Header = () => {
     </header>
   );
 };
+
+const a = 10;
+
+export default Header;

@@ -1,30 +1,20 @@
 import React from "react";
 import "./App.css";
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Example from "./components/Example";
 
 function App() {
   return (
-    // document.createElement("div")
-
-    // ! Cach viet thong thuong
-    // React.createElement(
-    //   "div",
-    //   { className: "infor" },
-    //   React.createElement(
-    //     "ul",
-    //     { className: "list" },
-    //     React.createElement("li", { className: "item" }, "item1"),
-    //     React.createElement("li", { className: "item" }, "item2"),
-    //     React.createElement("li", { className: "item" }, "item3")
-    //   )
-    // )
-
-    // ! Cach 2: viet = JSX (Javascript XML)
     <>
       {/* {Header()} */}
       <Header />
-      <main>Noi dung trang main</main>
+      <Example />
+      <main>
+        Noi dung trang main
+        <button className="btn btn-primary">Click me</button>
+        <button className="btn btn-danger">Nut Xoa san pham</button>
+      </main>
       <Footer />
     </>
   );
