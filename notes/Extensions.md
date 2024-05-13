@@ -9,3 +9,7 @@
 7. Javscript (ES6) code snippets
 
 # 2. Cấu hình
+
+1. Setting -> Auto save -> onFocusChange
+2. Setting -> Format on save -> true
+3. Setting -> Default Formatter -> Prettier - Code formatter
