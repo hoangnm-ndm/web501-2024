@@ -1,21 +1,14 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const AnonymousLayout = () => {
   return (
     <>
-      <h1>Anonymous Layout</h1>
-      <header>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to={"/login"}>Login</Link>
-          </li>
-        </ul>
-      </header>
+      <Header />
       <Outlet />
+      <Footer />
     </>
   );
 };
