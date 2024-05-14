@@ -14,13 +14,23 @@
 14. ESLinst, Prettier, Coding convention, Clean code
 15. Json-server, json-server-auth.
 16. Local storage, session storage
-17. Hoàn thiện dự án
+
+# Dành riêng cho xưởng ReactJS:
+
     - Tìm kiếm ý tưởng và giao diện
-    - Xây dựng cấu trúc routes
-    - Xây dựng trang sản phẩm
-    - Xây dựng trang chi tiết sản phẩm
-    - Xây dựng trang About
-    - Xây dựng trang Admin
-    - Tính năng CRUD của trang Admin
-    - Tính năng đăng nhập, đăng ký
+    - Xây dựng cấu trúc routes (router nâng cao: router lồng nhau, layout riêng biệt cho từng loại trang, private route, public route)
+    - Xây dựng trang sản phẩm:
+      - Danh sách sản phẩm,
+      - Phân trang, lọc sản phẩm, sắp xếp sản phẩm,
+    - Xây dựng trang chi tiết sản phẩm:
+      - Hiển thị thông tin chi tiết sản phẩm
+      - Hiển thị sản phẩm liên quan
+    - Xây dựng trang About:
+      - Giới thiệu về công ty, nhóm phát triển
+    - Xây dựng trang Admin:
+        - Tính năng quản lý sản phẩm (có upload ảnh với cloudinary)
+        - Tính năng quản lý người dùng
+    - Tính năng Auth:
+      - Đăng ký, đăng nhập, đăng xuất
+      - Quên mật khẩu
     - Tính năng phân quyền với JWT ở admin, private route
