@@ -1,4 +1,4 @@
-# 1. Biến và phạm vi hoạt động, khai báo biến với var,let, const.
+# 1. Biến và phạm vi hoạt động, khai báo biến với var,let, const. -done
 
 - Var:
   - Khai báo biến với var có thể khai báo ở bất kỳ đâu trong scope của nó.
@@ -17,7 +17,7 @@
   - Khai báo với let có phạm vi hoạt động là block scope
   - Khai báo với let không thể truy cập trước khi khai báo (không bị hoisting)
 
-1. Template string
+# 2. Template string -done
 
 - Là cách để viết biểu thức javascript trong chuỗi một cách dễ dàng và thuận tiện, hỗ trợ xuống dòng...
 
@@ -27,15 +27,22 @@ const age = 20;
 console.log(`My name is ${name} and I am ${age} years old`);
 ```
 
-2. Destructuring
+# 3. Destructuring -done
 
 - Là cú pháp khai báo biến mới nhanh dựa vào các key hoặc index của một object hoặc một array.
 
-3. Rest và spread
-4. Arrow function (Các loại function), IIFE
-5. Default parameter
-6. Bất đồng bộ và xử lý bất đồng bộ: callback, promise, async/await.
-7. Axios
-8. Modules: import, export
-9. ESLinst, Prettier, Coding convention, Clean code
-10. Json-server, json-server-auth.
+# 4. Rest và spread
+
+# 5. Arrow function (Các loại function), IIFE
+
+# 6. Default parameter
+
+# 7. Bất đồng bộ và xử lý bất đồng bộ: callback, promise, async/await.
+
+# 8. Axios
+
+# 9. Modules: import, export
+
+# 10. ESLinst, Prettier, Coding convention, Clean code
+
+# 11. Json-server, json-server-auth.
