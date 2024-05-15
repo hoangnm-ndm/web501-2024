@@ -1,0 +1,5 @@
+- Rest nghĩa là những phần tử còn lại, rest thường xuất hiện ở cuối cùng của array hoặc object.
+- Rest xuất hiện khi khai báo tham số cho hàm hoặc khi destructuring.
+- Spread nghĩa là phân rã, spread thường xuất hiện ở đầu array hoặc object.
+- Spead xuất hiện khi đưa các giá trị mới vào array hoặc object.
+- Spread dùng để nối array hoặc object.
