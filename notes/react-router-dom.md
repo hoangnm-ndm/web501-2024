@@ -1,3 +1,22 @@
+# 1. Cài đặt:
+
+```
+  npm i react-router-dom
+```
+
+# 2. Thêm BrowserRouter vào main.jsx:
+
+```jsx
+import { BrowserRouter } from "react-router-dom";
+//...
+<BrowserRouter>
+	<App />
+</BrowserRouter>;
+```
+
+# 3. Sử dụng Route trong App.jsx
+
+```jsx
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -25,3 +44,10 @@ function App() {
 }
 
 export default App;
+```
+
+# 4. Sử dụng Link để chuyển trang
+
+```jsx
+<Link to="/">Home</Link>
+```
