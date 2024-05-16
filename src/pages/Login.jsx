@@ -3,8 +3,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 
 const schema = z.object({
-	name: z.string().min(1, { message: "Required" }),
-	age: z.number().min(10),
+	username: z.string().min(1, { message: "Required" }),
+	password: z.string().min(6),
 });
 
 const Login = () => {
@@ -16,13 +16,28 @@ const Login = () => {
 		resolver: zodResolver(schema),
 	});
 
+	const submit = (data) => {
+		console.log(data);
+	};
+
 	return (
-		<form onSubmit={handleSubmit((d) => console.log(d))}>
-			<input {...register("name")} />
-			{errors.name?.message && <p>{errors.name?.message}</p>}
-			<input type="number" {...register("age", { valueAsNumber: true })} />
-			{errors.age?.message && <p>{errors.age?.message}</p>}
-			<input type="submit" />
+		<form onSubmit={handleSubmit((d) => submit(d))}>
+			<h1>Login</h1>
+			<div className="form-group">
+				<label htmlFor="name">Username</label>
+				<input type="text" className="form-control" {...register("username")} />
+				{errors.username?.message && <p>{errors.username?.message}</p>}
+			</div>
+
+			<div className="form-group">
+				<label htmlFor="password">Password</label>
+				<input type="password" className="form-control" {...register("password")} />
+				{errors.password?.message && <p>{errors.password?.message}</p>}
+			</div>
+
+			<div className="form-group">
+				<input className="btn btn-primary w-100" type="submit" value={"Login"} />
+			</div>
 		</form>
 	);
 };
