@@ -26,11 +26,21 @@ const product = {
 const { title, price, ...others } = product;
 console.log(title);
 console.log(others);
-// args = arguments
+// ? args = arguments
 function sum(...args) {
-	return; //
+	console.log(args);
+	let total = 0;
+	for (let i = 0; i < args.length; i++) {
+		total += args[i];
+	}
+	return total;
 }
 
+console.log(sum(1, 2, 3, 400));
+console.log("thamso1");
 // TODO: Viết hàm sum sao cho có thể truyền vào bất kỳ bao nhiêu số đều được, tính tổng các số được truyền vào
 // ? sum(1,2) => 3
 // ? sum(100, 200, 300) => 600
+
+const name = "hoang";
+console.log(name.length);
