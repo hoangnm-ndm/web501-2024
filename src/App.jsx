@@ -1,12 +1,24 @@
-// App.js
-
 import React from "react";
-import { Routes } from "./routes";
+import Header from "./components/Header";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import NotFound from "./pages/NotFound";
+import Footer from "./components/Footer";
 
 const App = () => {
-  const isAdmin = true; // Xác định xem người dùng có phải là admin hay không
-
-  return <Routes isAuthorized={true} />;
+	<>
+		<h1>Hello</h1>
+		{/* <Header /> */}
+		{/* <main className="container">
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/login" element={<Login />} />
+				<Route path="*" element={<NotFound />} />
+			</Routes>
+		</main>
+		<Footer /> */}
+	</>;
 };
 
 export default App;
