@@ -31,5 +31,6 @@ function sum(...args) {
 	return; //
 }
 
-// sum(1,2) => 3
-// sum(100, 200, 300) => 600
+// TODO: Viết hàm sum sao cho có thể truyền vào bất kỳ bao nhiêu số đều được, tính tổng các số được truyền vào
+// ? sum(1,2) => 3
+// ? sum(100, 200, 300) => 600
