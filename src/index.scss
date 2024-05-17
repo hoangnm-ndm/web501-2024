@@ -55,3 +55,13 @@ footer {
 	position: fixed;
 	bottom: 0;
 }
+
+.card {
+	width: 400px;
+	img {
+		width: 100%;
+	}
+	.content {
+		padding: 24px;
+	}
+}
