@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import instance from "../axios";
 
-const Login = () => {
+const Register = () => {
 	const {
 		register,
 		handleSubmit,
@@ -16,9 +16,9 @@ const Login = () => {
 	const submit = (d) => {
 		(async () => {
 			try {
-				const { data } = await instance.post(`/signin`, d);
+				const { data } = await instance.post(`/signup`, d);
 				console.log(data);
-				alert(`Dang nhap thanh cong!, ${data.user.email}`);
+				alert(`Dang ky thanh cong!, ${data.user.email}`);
 			} catch (error) {
 				alert(error.response.data);
 			}
@@ -27,7 +27,7 @@ const Login = () => {
 	return (
 		<div>
 			<form onSubmit={handleSubmit((d) => submit(d))}>
-				<h1>Login</h1>
+				<h1>Register</h1>
 				<div className="form-group">
 					<label htmlFor="email">Email</label>
 					<input className="form-control" type="email" {...register("email")} />
@@ -39,11 +39,11 @@ const Login = () => {
 					{errors.password && <strong className="text-red">{errors.password?.message}</strong>}
 				</div>
 				<div className="form-group">
-					<button className="btn btn-primary">Login</button>
+					<button className="btn btn-primary">Register</button>
 				</div>
 			</form>
 		</div>
 	);
 };
 
-export default Login;
+export default Register;
