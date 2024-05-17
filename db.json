@@ -75,6 +75,21 @@
       "email": "dsdsdsdsdsssd@gmail.com",
       "password": "$2a$10$28FauQZ/YCA7gHLfX8/r9euNT8JOSqNuH8TltK5alopox2JyPlu9a",
       "id": 13
+    },
+    {
+      "email": "wewe@gmail.com",
+      "password": "$2a$10$CdIngzDd1Vj1DxWhR3tDuOeO/oTMpnrbpnSw4NoRdRAF5OUw7HVUC",
+      "id": 14
+    },
+    {
+      "email": "hoang@gmail.com",
+      "password": "$2a$10$rqyFn41nHt/BA7bHbTi6YOiDIIbmpSvL.maLULb.p5cflXAM98cu2",
+      "id": 15
+    },
+    {
+      "email": "hoang1@gmail.com",
+      "password": "$2a$10$ifuUt7sJZQB/20x3EolZmurRYQLTpyJFAZloAG1hsUWgI.VfCAmW.",
+      "id": 16
     }
   ],
   "products": [

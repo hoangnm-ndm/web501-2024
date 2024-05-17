@@ -16,7 +16,7 @@ const Login = () => {
 	const submit = (d) => {
 		(async () => {
 			try {
-				const { data } = await instance.post(`/signin`, d);
+				const { data } = await instance.post(`/login`, d);
 				console.log(data);
 				alert(`Dang nhap thanh cong!, ${data.user.email}`);
 			} catch (error) {

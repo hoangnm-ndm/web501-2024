@@ -16,7 +16,7 @@ const Register = () => {
 	const submit = (d) => {
 		(async () => {
 			try {
-				const { data } = await instance.post(`/signup`, d);
+				const { data } = await instance.post(`/register`, d);
 				console.log(data);
 				alert(`Dang ky thanh cong!, ${data.user.email}`);
 			} catch (error) {
