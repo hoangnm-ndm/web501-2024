@@ -1,6 +1,0 @@
-- Rest là toán tử gom phần còn lại của một dữ liệu phức tạp vào một biến mới.
-- Rest luôn xuất hiện ở cuối khai báo.
-- Spead là toán tử trải dữ liệu phức tạp ra thành các phần tử đơn lẻ.
-- Spread có thể xuất hiện ở bất cứ vị trí nào trong khai báo, nhưng thường xuất hiện ở đầu.
-- Spread có thể trải ra một mảng hoặc một object.
-- Spread xuất hiện khi ta muốn sử dụng đến biến, còn rest thường xuất hiện khi khai báo biến.

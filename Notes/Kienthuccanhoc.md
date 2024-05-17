@@ -31,17 +31,31 @@ console.log(`My name is ${name} and I am ${age} years old`);
 
 - Là cú pháp khai báo biến mới nhanh dựa vào các key hoặc index của một object hoặc một array.
 
-# 4. Rest và spread
+# 4. Rest và spread -done
 
-# 5. Arrow function (Các loại function), IIFE
+- Rest là toán tử gom phần còn lại của một dữ liệu phức tạp vào một biến mới.
+- Rest luôn xuất hiện ở cuối khai báo.
+- Spead là toán tử trải dữ liệu phức tạp ra thành các phần tử đơn lẻ.
+- Spread có thể xuất hiện ở bất cứ vị trí nào trong khai báo, nhưng thường xuất hiện ở đầu.
+- Spread có thể trải ra một mảng hoặc một object.
+- Spread xuất hiện khi ta muốn sử dụng đến biến, còn rest thường xuất hiện khi khai báo biến.
 
-# 6. Default parameter
+# 5. Arrow function (Các loại function), IIFE -done
+
+- Hàm mũi tên là hàm không dùng từ khóa "function" để khai báo.
+- Hàm mũi tên không có phạm vi hoạt động riêng, nó sẽ lấy phạm vi hoạt động của hàm gần nhất.
+- Hàm mũi tên không có từ khóa "this", "arguments", "super", "new.target".
+- Hàm mũi tên không thể làm hàm constructor.
+- Hàm mũi tên là cách viết rút gọn, dễ đọc, dễ hiểu, có trường hợp hàm mũi tên cũng là hàm ẩn danh vì nó không được khai báo tên hàm.
+- IIFE là hàm tự gọi ngay sau khi khai báo.
+
+# 6. Default parameter -done
 
 # 7. Bất đồng bộ và xử lý bất đồng bộ: callback, promise, async/await.
 
 # 8. Axios
 
-# 9. Modules: import, export
+# 9. Modules: import, export -done
 
 # 10. ESLinst, Prettier, Coding convention, Clean code
 
