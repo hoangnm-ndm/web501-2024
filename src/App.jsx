@@ -9,19 +9,19 @@ import LoginPage from "./pages/LoginPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 export default function App() {
-  return (
-    <>
-      <Header />
-      <main className="container">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/home" element={<Navigate to="/" />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </main>
-      <Footer />
-    </>
-  );
+	return (
+		<>
+			<Header />
+			<main className="container">
+				<Routes>
+					<Route path="/" element={<HomePage />} />
+					<Route path="/home" element={<Navigate to="/" />} />
+					<Route path="/about" element={<AboutPage />} />
+					<Route path="/login" element={<LoginPage />} />
+					<Route path="*" element={<NotFoundPage />} />
+				</Routes>
+			</main>
+			<Footer />
+		</>
+	);
 }
