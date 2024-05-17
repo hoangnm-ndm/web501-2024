@@ -35,4 +35,16 @@ function sum(...args) {
 	return tong;
 }
 
-console.log(sum(1, 2, 3));
+function sum2(...args) {
+	let tong = 0;
+	for (value of args) {
+		tong = tong + value;
+	}
+	return tong;
+}
+
+function sum3(...arr) {
+	return arr.reduce((a, b) => a + b, 0);
+}
+
+console.log(sum3(1, 2, 3, 100));
