@@ -19,9 +19,25 @@ console.log(phanConLai);
 // TODO: Viết hàm sum nhận vào số lượng tham số bất kỳ, trả về tổng của các số điền vào.
 
 function sum(...thamso) {
-	console.log(thamso);
+	let tong = 0;
+	for (value of thamso) {
+		tong += value;
+	}
+	return tong;
 }
-console.log(sum(1, 2, 3));
+
+function sum2(...thamso) {
+	let tong = 0;
+	for (let i = 0; i < thamso.length; i++) {
+		tong += thamso[i];
+	}
+	return tong;
+}
+
+function sum3(...thamso) {
+	return thamso.reduce((a, b) => a + b, 0);
+}
+console.log(sum3(1, 2, 3));
 
 // sum(1,2,3) => 6
 // sum(100, 200) => 300
