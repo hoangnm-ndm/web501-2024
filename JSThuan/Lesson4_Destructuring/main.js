@@ -24,9 +24,12 @@ console.log(name);
 console.log(rest);
 
 function sum(...rest) {
-	console.log(rest);
-	return; //
+	let tong = 0;
+	for (value of rest) {
+		tong += value;
+	}
+	return tong;
 }
-sum(1, 2, 3, 5);
+console.log(sum(1, 2, 3, 5));
 // sum(1,2) => 3
 // sum(100, 200, 300) => 600

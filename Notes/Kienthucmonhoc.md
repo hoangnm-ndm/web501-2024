@@ -15,6 +15,13 @@ day la 1 bieu thuc${expression}
 
 # 4. Rest và spread
 
+- Rest: Dùng để gom các phần tử còn lại của một mảng hoặc object vào một biến.
+- Rest thì thường xuất hiện ở cuối khai báo biến.
+- Rest cũng xuất hiện khi khai báo tham số cho hàm.
+- Spread: Dùng để bóc tách mảng hoặc object ra thành các phần tử riêng lẻ.
+- Spread xuất hiện khi dùng dữ liệu ở object, array cũ để đưa vào object, array mới.
+- Spread xuất hiện ở bất cứ vị trí nào trong khi khai báo object, array nhưng thường xuất hiện ở đầu.
+
 # 5. Arrow function (Các loại function), IIFE -done
 
 # 6. Default parameter
