@@ -15,7 +15,7 @@ day la 1 bieu thuc${expression}
 
 # 4. Rest và spread
 
-# 5. Arrow function (Các loại function), IIFE
+# 5. Arrow function (Các loại function), IIFE -done
 
 # 6. Default parameter
 
