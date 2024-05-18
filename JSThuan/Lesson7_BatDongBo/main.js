@@ -36,4 +36,4 @@ fetch("https://dummyjson.com/products")
 	})
 	.catch((error) => console.log(error));
 
-// ! Sau khi lay dk danh sach san pham thi tim cach hien thi ra ngoai html
+// TODO: Sau khi lay dk danh sach san pham thi tim cach hien thi ra ngoai html
