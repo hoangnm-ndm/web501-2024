@@ -1,13 +1,12 @@
 import React from "react";
 
 function HomePage({ products }) {
-	console.log(products);
 	return (
 		<>
 			<h1>San pham ban chay</h1>
 			<div className="row">
 				{products.map((p) => (
-					<div className="col-4">
+					<div className="col-4" key={p.id}>
 						<div className="card">
 							<img src={p.thumbnail} alt={p.name} />
 							<div className="content">
