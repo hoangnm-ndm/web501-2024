@@ -25,27 +25,12 @@ const products = [
 		price: 300,
 	},
 ];
-
-// function Shop(props) {
-// 	console.log(props.color);
-// 	return (
-// 		<>
-// 			{props.data.map((item) => (
-// 				<div key={item.id}>
-// 					<h2>{item.name}</h2>
-// 					<p>{item.price}</p>
-// 				</div>
-// 			))}
-// 		</>
-// 	);
-// }
-
 // ! Props = properties
+
 export default function App() {
 	return (
 		<>
 			<Header />
-			{/* <Shop data={products} color="red" /> */}
 			<main className="container">
 				<Routes>
 					<Route path="/" element={<HomePage data={products} />} />
