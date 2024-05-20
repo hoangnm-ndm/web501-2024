@@ -25,6 +25,30 @@ function taskC() {
 	});
 }
 
+// Cach 1: callback
+// function runTasks() {
+// 	taskA(() => {
+// 		taskB(() => {
+// 			taskC(() => {
+// 				console.log("cac cong viec da xong het");
+// 			});
+// 		});
+// 	});
+// }
+
+// runTasks();
+
+// Cach 2 : Promise
+// function runTasks() {
+// 	taskA()
+// 		.then(() => taskB())
+// 		.then(() => taskC())
+// 		.then(() => console.log("cac cong viec da xong het"))
+// 		.catch((error) => console.error(error));
+// }
+// runTasks()
+
+// Cach 3: asyns/await
 async function runTasks() {
 	try {
 		await taskA();
