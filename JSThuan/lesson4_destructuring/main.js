@@ -41,3 +41,9 @@ console.log(sum3(1, 2, 3));
 
 // sum(1,2,3) => 6
 // sum(100, 200) => 300
+
+const props = {
+	data: [],
+};
+
+console.log({ data });
