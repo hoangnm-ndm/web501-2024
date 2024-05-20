@@ -1,29 +1,39 @@
-function taskA(callback) {
-	setTimeout(() => {
-		console.log("TaskA done");
-		callback();
-	}, 2000);
-}
-function taskB(callback) {
-	setTimeout(() => {
-		console.log("TaskB done");
-		callback();
-	}, 4000);
-}
-function taskC(callback) {
-	setTimeout(() => {
-		console.log("TaskC done");
-		callback();
-	}, 6000);
-}
-
-// A -> B -> C
-taskA(() => {
-	taskB(() => {
-		taskC(() => {
-			console.log("cac cong viec da xong het");
-		});
+function taskA() {
+	return new Promise((resolve) => {
+		setTimeout(() => {
+			console.log("TaskA done");
+			resolve();
+		}, 2000);
 	});
-});
+}
 
-//! callback
+function taskB() {
+	return new Promise((resolve) => {
+		setTimeout(() => {
+			console.log("TaskB done");
+			resolve();
+		}, 4000);
+	});
+}
+
+function taskC() {
+	return new Promise((resolve) => {
+		setTimeout(() => {
+			console.log("TaskC done");
+			resolve();
+		}, 6000);
+	});
+}
+
+async function runTasks() {
+	try {
+		await taskA();
+		await taskB();
+		await taskC();
+		console.log("cac cong viec da xong het");
+	} catch (error) {
+		console.error(error);
+	}
+}
+
+runTasks();
