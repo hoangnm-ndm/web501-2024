@@ -47,16 +47,27 @@ function taskC() {
 // 		console.log(error);
 // 	});
 
-// Cach 3: Async/Await
-async function runTask() {
-	try {
-		await taskA();
-		await taskB();
-		await taskC();
-		console.log("Xong het!");
-	} catch (error) {
+console.time("tinhGio");
+Promise.all([taskA(), taskB(), taskC()])
+	.then(() => {
+		console.log("All Done");
+		console.timeEnd("tinhGio");
+	})
+	.catch((error) => {
 		console.log(error);
-	}
-}
+	});
 
+// Cach 3: Async/Await
+// async function runTask() {
+// 	try {
+// 		await taskA();
+// 		await taskB();
+// 		await taskC();
+// 		console.timeEnd("tinhGio");
+// 		console.log("Xong het!");
+// 	} catch (error) {
+// 		console.log(error);
+// 	}
+// }
+// console.time("tinhGio");
 // runTask();
