@@ -8,6 +8,7 @@ import AboutPage from "./pages/AboutPage";
 import ShopPage from "./pages/ShopPage";
 import { useEffect, useState } from "react";
 import instance from "./axios";
+import DetailProduct from "./pages/DetailProduct";
 
 function App() {
 	const [products, setProducts] = useState([]);
@@ -28,6 +29,7 @@ function App() {
 			<main className="container">
 				<Routes>
 					<Route path="/" element={<HomePage products={products} />} />
+					<Route path="/product-detail/:id" element={<DetailProduct />} />
 					<Route path="/about" element={<AboutPage />} />
 					<Route path="/shop" element={<ShopPage />} />
 					<Route path="*" element={<NotFoundPage />} />
