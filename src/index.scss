@@ -12,6 +12,7 @@ header {
 	width: 100%;
 	height: 100px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+	background-color: rgba($color: white, $alpha: 0.9);
 	display: flex;
 	justify-self: flex-start;
 	align-items: center;
@@ -19,6 +20,7 @@ header {
 	top: 0;
 	left: 0;
 	right: 0;
+	z-index: 99;
 	ul {
 		display: flex;
 		justify-content: flex-start;
@@ -58,8 +60,14 @@ footer {
 
 .card {
 	width: 400px;
+	max-width: 100%;
+	margin-bottom: 24px;
 	img {
 		width: 100%;
+		height: 200px;
+	}
+	button {
+		margin-bottom: 24px;
 	}
 	.content {
 		padding: 24px;

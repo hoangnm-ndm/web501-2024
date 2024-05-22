@@ -6,7 +6,7 @@ function HomePage({ products }) {
 			<h1>San pham ban chay</h1>
 			<div className="row">
 				{products.map((p) => (
-					<div className="col-4" key={p.id}>
+					<div className="col-12 col-sm-6 col-md-4 col-lg-3" key={p.id}>
 						<div className="card">
 							<img src={p.thumbnail} alt={p.name} />
 							<div className="content">

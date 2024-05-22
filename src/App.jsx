@@ -7,17 +7,20 @@ import { Route, Routes } from "react-router-dom";
 import AboutPage from "./pages/AboutPage";
 import ShopPage from "./pages/ShopPage";
 import { useEffect, useState } from "react";
+import instance from "./axios";
 
 function App() {
 	const [products, setProducts] = useState([]);
 	useEffect(() => {
-		fetch("http://localhost:3000/products")
-			.then((res) => res.json())
-			.then((data) => {
-				console.log(data);
+		(async () => {
+			try {
+				const { data } = await instance.get("/products");
 				setProducts(data);
-			})
-			.catch((err) => console.log(err));
+			} catch (error) {
+				console.log(error);
+			}
+		})();
+		// IIFE = Invoke Immediately Function Expression (là hàm được gọi ngay lập tức sau khi khai báo)
 	}, []);
 	return (
 		<>
