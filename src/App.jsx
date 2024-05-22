@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer";
@@ -10,14 +10,15 @@ import NotFoundPage from "./pages/NotFoundPage";
 
 // ! Props = properties
 export default function App() {
-	let products = [];
-	fetch("http://localhost:3000/products")
-		.then((res) => res.json())
-		.then((data) => {
-			console.log(data);
-			products = data;
-		});
-	console.log(products);
+	const [products, setProducts] = useState([]);
+	useEffect(() => {
+		fetch("http://localhost:3000/products")
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+				setProducts(data);
+			});
+	}, []);
 	return (
 		<>
 			<Header />

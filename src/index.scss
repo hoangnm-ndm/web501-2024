@@ -59,3 +59,16 @@ footer {
 	padding: 32px;
 	text-align: center;
 }
+
+.productItem {
+	width: 300px;
+	border-radius: 8px;
+	border-radius: 1px solid #ccc;
+	img {
+		width: 100%;
+	}
+
+	.content {
+		padding: 12px;
+	}
+}
