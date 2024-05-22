@@ -11,11 +11,19 @@ import NotFoundPage from "./pages/NotFoundPage";
 export default function App() {
 	const [products, setProducts] = useState([]);
 	useEffect(() => {
-		fetch("http://localhost:3000/products")
-			.then((res) => res.json())
-			.then((data) => {
+		const fetchData = async () => {
+			try {
+				const response = await fetch("http://localhost:3000/products");
+				const data = await response.json();
 				setProducts(data);
-			});
+			} catch (error) {
+				console.error("Error fetching data:", error);
+			}
+		};
+
+		fetchData();
+
+		// TODO: Cài đặt và sử dụng axios instance để fetch lại dữ liệu (22/5/2024)
 	}, []);
 	return (
 		<>
