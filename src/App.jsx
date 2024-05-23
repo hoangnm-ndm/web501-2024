@@ -16,7 +16,6 @@ function App() {
 		fetch("https://dummyjson.com/products")
 			.then((response) => response.json())
 			.then(({ products }) => {
-				console.log(products);
 				setProducts(products);
 			})
 			.catch((error) => {
