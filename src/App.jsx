@@ -10,6 +10,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 
 export default function App() {
 	const [products, setProducts] = useState([]);
+	const [show, setShow] = useState(false);
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
@@ -22,15 +23,21 @@ export default function App() {
 		};
 
 		fetchData();
-
-		// TODO: Cài đặt và sử dụng axios instance để fetch lại dữ liệu (22/5/2024)
 	}, []);
+
+	function hanldeShow() {
+		setShow(!show);
+	}
+	console.log("cap nhat lai", show);
 	return (
 		<>
 			<Header />
 			<main className="container">
+				<button className="btn btn-warning" onClick={hanldeShow}>
+					{show ? "Hidden" : "Show"}
+				</button>
 				<Routes>
-					<Route path="/" element={<HomePage data={products} />} />
+					<Route path="/" element={<HomePage isPublic={show} data={products} />} />
 					<Route path="/home" element={<Navigate to="/" />} />
 					<Route path="/about" element={<AboutPage />} />
 					<Route path="/login" element={<LoginPage />} />
