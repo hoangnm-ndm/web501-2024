@@ -7,40 +7,31 @@ import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import api from "./axios";
+import Dashboard from "./pages/admin/Dashboard";
 
 export default function App() {
 	const [products, setProducts] = useState([]);
-	const [show, setShow] = useState(false);
 	useEffect(() => {
-		const fetchData = async () => {
+		(async () => {
 			try {
-				const response = await fetch("http://localhost:3000/products");
-				const data = await response.json();
+				const { data } = await api.get("/products");
 				setProducts(data);
 			} catch (error) {
 				console.error("Error fetching data:", error);
 			}
-		};
-
-		fetchData();
+		})();
 	}, []);
-
-	function hanldeShow() {
-		setShow(!show);
-	}
-	console.log("cap nhat lai", show);
 	return (
 		<>
 			<Header />
 			<main className="container">
-				<button className="btn btn-warning" onClick={hanldeShow}>
-					{show ? "Hidden" : "Show"}
-				</button>
 				<Routes>
-					<Route path="/" element={<HomePage isPublic={show} data={products} />} />
+					<Route path="/" element={<HomePage data={products} />} />
 					<Route path="/home" element={<Navigate to="/" />} />
 					<Route path="/about" element={<AboutPage />} />
 					<Route path="/login" element={<LoginPage />} />
+					<Route path="/admin" element={<Dashboard data={products} />} />
 					<Route path="*" element={<NotFoundPage />} />
 				</Routes>
 			</main>
