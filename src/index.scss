@@ -11,6 +11,8 @@
 header {
 	width: 100%;
 	position: fixed;
+	background-color: rgba($color: #000000, $alpha: 0.8);
+	color: #fff;
 	top: 0;
 	z-index: 99;
 	height: 100px;
@@ -31,8 +33,8 @@ header {
 				font-weight: 800;
 				transition: all ease-in-out 0.3s;
 				&:hover {
-					color: blue;
-					border-bottom: 2px solid blue;
+					color: rgb(215, 215, 255);
+					border-bottom: 2px solid rgb(215, 215, 255);
 				}
 			}
 		}
@@ -40,15 +42,36 @@ header {
 }
 
 main {
-	margin-top: 140px;
+	margin: 140px auto 40px;
+	min-height: calc(100vh - 164px);
+}
+
+.card {
+	max-width: 100%;
+	border: 1px solid #ccc;
+	box-shadow: rgba($color: #000000, $alpha: 0.8);
+	border-radius: 8px;
+	margin: 12px 32px;
+	.img {
+		height: 200px;
+	}
+	.content {
+		padding: 20px;
+		h2 {
+			font-size: 20px;
+			font-weight: 800;
+			color: blue;
+		}
+		button {
+			width: 100%;
+		}
+	}
 }
 
 footer {
 	width: 100%;
 	background-color: #111;
 	color: #eee;
-	position: fixed;
-	bottom: 0;
 	padding: 32px;
 	text-align: center;
 }
