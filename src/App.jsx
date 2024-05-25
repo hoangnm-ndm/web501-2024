@@ -8,21 +8,23 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Notfound from "./pages/Notfound";
 import ProductDetail from "./pages/ProductDetail";
+import Dashboard from "./pages/admin/Dashboard";
+import api from "./axios";
 
 // ! props = properties
 function App() {
 	const [products, setProducts] = useState([]);
 	useEffect(() => {
-		async function fetchAPI() {
+		(async () => {
 			try {
-				const res = await fetch("http://localhost:3000/products");
-				const data = await res.json();
+				const { data } = await api.get("/products");
+				console.log(data);
+				// http://localhost:3000/products
 				setProducts(data);
 			} catch (error) {
 				console.log(error);
 			}
-		}
-		fetchAPI();
+		})();
 	}, []);
 
 	return (
@@ -34,6 +36,7 @@ function App() {
 					<Route path="/about" element={<About />} />
 					<Route path="/contact" element={<Contact />} />
 					<Route path="/product-detail/:id" element={<ProductDetail />} />
+					<Route path="/admin" element={<Dashboard data={products} />} />
 					<Route path="*" element={<Notfound />} />
 				</Routes>
 			</main>

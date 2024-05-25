@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Home = ({ data }) => {
+	console.log(data);
 	return (
 		<>
 			<div className="row">
