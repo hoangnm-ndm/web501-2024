@@ -22,32 +22,18 @@ function App() {
 			});
 	}, []);
 
-	// TODO: Xay dung lai giao dien trên với dạng table bao gồm các cột: ID, Title, Price, Thumbnail, Acttion(cột action có nút xóa, sửa)
+	// ! props = propeties = cac thuoc tinh = {}
+
 	return (
 		<div>
 			<Header />
 			<main className="container">
-				<div className="row">
-					{products.map((item) => (
-						<div className="col-12 col-sm-6 col-md-4 col-lg-3 item" key={item.id}>
-							<div>
-								<img src={item.thumbnail} alt={item.title} />
-							</div>
-							<div className="content">
-								<h2>{item.title}</h2>
-								<p>Gia: {item.price}</p>
-								<button className="btn btn-danger">Xem chi tiet</button>
-							</div>
-						</div>
-					))}
-				</div>
-
-				{/* <Routes>
-					<Route path="/" element={<Home />} />
+				<Routes>
+					<Route path="/" element={<Home data={products} name="hoang" class="WD18410" />} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/about" element={<About />} />
 					<Route path="*" element={<NotFound />} />
-				</Routes> */}
+				</Routes>
 			</main>
 			<Footer />
 		</div>
