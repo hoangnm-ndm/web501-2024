@@ -1,10 +1,9 @@
 const Home = ({ data }) => {
-	console.log(data);
 	return (
 		<>
 			<div className="row">
 				{data.map((p) => (
-					<div className="col-12 col-sm-6 col-md-4 col-lg-3">
+					<div className="col-12 col-sm-6 col-md-4 col-lg-3" key={p.id}>
 						<div className="card">
 							<img src={p.thumbnail} alt="" />
 							<div className="content">

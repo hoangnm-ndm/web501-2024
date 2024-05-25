@@ -1,25 +1,27 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
-  return (
-    <header>
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="">About</a>
-        </li>
-        <li>
-          <a href="">Shop</a>
-        </li>
-        <li>
-          <a href="">Login</a>
-        </li>
-        <li>
-          <a href=""></a>
-        </li>
-      </ul>
-    </header>
-  );
+	return (
+		<header>
+			<ul>
+				<li>
+					<Link to="/">Home</Link>
+				</li>
+				<li>
+					<Link to="/about">About</Link>
+				</li>
+				<li>
+					<Link to="/">Shop</Link>
+				</li>
+				<li>
+					<Link to="/login">Login</Link>
+				</li>
+				<li>
+					<Link to="/contact"></Link>
+				</li>
+			</ul>
+		</header>
+	);
 };
 
 const a = 10;

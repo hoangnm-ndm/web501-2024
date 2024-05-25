@@ -3,6 +3,10 @@ import "./App.scss";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import { Route, Routes } from "react-router-dom";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Notfound from "./pages/Notfound";
 
 // ! props = properties
 function App() {
@@ -24,7 +28,12 @@ function App() {
 		<>
 			<Header />
 			<main className="container">
-				<Home data={products} />
+				<Routes>
+					<Route path="/" element={<Home data={products} />} />
+					<Route path="/about" element={<About />} />
+					<Route path="/contact" element={<Contact />} />
+					<Route path="*" element={<Notfound />} />
+				</Routes>
 			</main>
 			<Footer />
 		</>
