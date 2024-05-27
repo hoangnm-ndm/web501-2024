@@ -8,19 +8,29 @@ import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ProductDetail from "./pages/ProductDetail";
+import api from "./axios";
 
 function App() {
 	const [products, setProducts] = useState([]);
 
 	useEffect(() => {
-		fetch("https://dummyjson.com/products")
-			.then((response) => response.json())
-			.then(({ products }) => {
-				setProducts(products);
-			})
-			.catch((error) => {
+		// fetch("https://dummyjson.com/products")
+		// 	.then((response) => response.json())
+		// 	.then(({ products }) => {
+		// 		setProducts(products);
+		// 	})
+		// 	.catch((error) => {
+		// 		console.log(error);
+		// 	});
+
+		(async () => {
+			try {
+				const { data } = await api.get("/products");
+				setProducts(data);
+			} catch (error) {
 				console.log(error);
-			});
+			}
+		})();
 	}, []);
 
 	return (
