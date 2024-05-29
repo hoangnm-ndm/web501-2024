@@ -1,15 +1,19 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
-const ProductAdd = () => {
+const ProductAdd = ({ onAdd }) => {
+	const navigate = useNavigate();
 	const {
 		register,
 		handleSubmit,
-		watch,
 		formState: { errors },
 	} = useForm();
 	const onSubmit = (data) => {
-		console.log(data);
+		onAdd(data);
+		if (confirm("Add product success, redirect to admin")) {
+			navigate("/admin");
+		}
 	};
 	return (
 		<div>

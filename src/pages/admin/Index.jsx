@@ -22,7 +22,7 @@ const Index = ({ data, username }) => {
 				</thead>
 				<tbody>
 					{data.map((product) => (
-						<tr>
+						<tr key={product.id}>
 							<td>{product.id}</td>
 							<td>{product.title}</td>
 							<td>{product.price}</td>

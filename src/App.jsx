@@ -24,6 +24,17 @@ function App() {
 			}
 		})();
 	}, []);
+
+	const handleSubmit = (data) => {
+		(async () => {
+			try {
+				const res = await instance.post("/products", data);
+				setProducts([...products, res.data]);
+			} catch (error) {
+				console.log(error);
+			}
+		})();
+	};
 	return (
 		<>
 			<Header />
@@ -34,7 +45,7 @@ function App() {
 					<Route path="/about" element={<AboutPage />} />
 					<Route path="/shop" element={<ShopPage />} />
 					<Route path="/admin" element={<Index data={products} username="Nguyen Van Admin" />} />
-					<Route path="/admin/product-add" element={<ProductAdd />} />
+					<Route path="/admin/product-add" element={<ProductAdd onAdd={handleSubmit} />} />
 					<Route path="*" element={<NotFoundPage />} />
 				</Routes>
 			</main>
