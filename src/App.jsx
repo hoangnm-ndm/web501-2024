@@ -10,6 +10,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import api from "./axios";
 import Dashboard from "./pages/admin/Dashboard";
 import ProductDetail from "./pages/ProductDetail";
+import ProductAdd from "./pages/admin/ProductAdd";
 
 export default function App() {
 	const [products, setProducts] = useState([]);
@@ -34,6 +35,7 @@ export default function App() {
 					<Route path="/about" element={<AboutPage />} />
 					<Route path="/login" element={<LoginPage />} />
 					<Route path="/admin" element={<Dashboard data={products} />} />
+					<Route path="/admin/product-add" element={<ProductAdd />} />
 					<Route path="*" element={<NotFoundPage />} />
 				</Routes>
 			</main>

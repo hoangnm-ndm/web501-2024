@@ -72,3 +72,15 @@ footer {
 		padding: 12px;
 	}
 }
+
+form {
+	width: 600px;
+	max-width: 100%;
+	margin: 0 auto;
+	border-radius: 8px;
+	border: 1px solid #bbb;
+	padding: 32px 24px;
+	.form-group {
+		margin-bottom: 24px;
+	}
+}
