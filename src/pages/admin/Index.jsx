@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // ! props = propeties = Những thuộc tính
 const Index = ({ data, username }) => {
@@ -6,6 +7,9 @@ const Index = ({ data, username }) => {
 	return (
 		<>
 			<h1>Hello, {username}</h1>
+			<Link to="/admin/product-add" className="btn btn-primary">
+				Add new product
+			</Link>
 			<table className="table table-bordered table-striped text-center">
 				<thead>
 					<tr>

@@ -73,3 +73,17 @@ footer {
 		padding: 24px;
 	}
 }
+
+form {
+	width: 600px;
+	max-width: 100%;
+	border: 1px solid #333;
+	border-radius: 8px;
+	padding: 24px 32px;
+	margin: 40px auto 0;
+	box-shadow: 0 0 12px rgba($color: #000000, $alpha: 0.5);
+	h1 {
+		font-size: 20px;
+		font-weight: 800;
+	}
+}

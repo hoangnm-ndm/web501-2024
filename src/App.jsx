@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import instance from "./axios";
 import DetailProduct from "./pages/DetailProduct";
 import Index from "./pages/admin/Index";
+import ProductAdd from "./pages/admin/ProductAdd";
 
 function App() {
 	const [products, setProducts] = useState([]);
@@ -33,6 +34,7 @@ function App() {
 					<Route path="/about" element={<AboutPage />} />
 					<Route path="/shop" element={<ShopPage />} />
 					<Route path="/admin" element={<Index data={products} username="Nguyen Van Admin" />} />
+					<Route path="/admin/product-add" element={<ProductAdd />} />
 					<Route path="*" element={<NotFoundPage />} />
 				</Routes>
 			</main>
