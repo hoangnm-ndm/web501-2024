@@ -9,6 +9,7 @@ import ShopPage from "./pages/ShopPage";
 import { useEffect, useState } from "react";
 import instance from "./axios";
 import DetailProduct from "./pages/DetailProduct";
+import Index from "./pages/admin/Index";
 
 function App() {
 	const [products, setProducts] = useState([]);
@@ -21,7 +22,6 @@ function App() {
 				console.log(error);
 			}
 		})();
-		// IIFE = Invoke Immediately Function Expression (là hàm được gọi ngay lập tức sau khi khai báo)
 	}, []);
 	return (
 		<>
@@ -32,6 +32,7 @@ function App() {
 					<Route path="/product-detail/:id" element={<DetailProduct />} />
 					<Route path="/about" element={<AboutPage />} />
 					<Route path="/shop" element={<ShopPage />} />
+					<Route path="/admin" element={<Index data={products} username="Nguyen Van Admin" />} />
 					<Route path="*" element={<NotFoundPage />} />
 				</Routes>
 			</main>
