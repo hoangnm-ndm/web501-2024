@@ -4,9 +4,9 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 
 const schemaProduct = z.object({
-	title: z.string().min(3),
-	price: z.number().min(1),
-	description: z.string(),
+	title: z.string().min(3, { message: "Tên phải có ít nhất 3 ký tự" }),
+	price: z.number().min(1, { message: "Giá phải lớn hơn 0" }),
+	description: z.string().optional(),
 });
 
 const ProductAdd = () => {
@@ -43,13 +43,7 @@ const ProductAdd = () => {
 					<label className="form-label" htmlFor="description">
 						Description
 					</label>
-					<input
-						className="form-control"
-						type="text"
-						id="description"
-						{...register("description", { required: true })}
-					/>
-					{errors.description?.message && <p className="text-danger">{errors.title?.message}</p>}
+					<input className="form-control" type="text" id="description" {...register("description")} />
 				</div>
 				<div className="form-group mb-3">
 					<button className="btn btn-primary w-100" type="submit">
