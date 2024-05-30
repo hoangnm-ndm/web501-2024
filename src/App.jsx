@@ -9,20 +9,13 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ProductDetail from "./pages/ProductDetail";
 import api from "./axios";
+import Dashboard from "./pages/admin/Dashboard";
+import ProductAdd from "./pages/admin/ProductAdd";
 
 function App() {
 	const [products, setProducts] = useState([]);
 
 	useEffect(() => {
-		// fetch("https://dummyjson.com/products")
-		// 	.then((response) => response.json())
-		// 	.then(({ products }) => {
-		// 		setProducts(products);
-		// 	})
-		// 	.catch((error) => {
-		// 		console.log(error);
-		// 	});
-
 		(async () => {
 			try {
 				const { data } = await api.get("/products");
@@ -42,6 +35,8 @@ function App() {
 					<Route path="/login" element={<Login />} />
 					<Route path="/product-detail/:id" element={<ProductDetail />} />
 					<Route path="/about" element={<About />} />
+					<Route path="/admin" element={<Dashboard data={products} />} />
+					<Route path="/admin/product-add" element={<ProductAdd />} />
 					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</main>
