@@ -3,7 +3,7 @@ import "./App.scss";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Notfound from "./pages/Notfound";
@@ -15,6 +15,7 @@ import ProductAdd from "./pages/admin/ProductAdd";
 // ! props = properties
 function App() {
 	const [products, setProducts] = useState([]);
+	const navigate = useNavigate();
 	useEffect(() => {
 		(async () => {
 			try {
@@ -27,6 +28,20 @@ function App() {
 			}
 		})();
 	}, []);
+	const hanldeSubmit = (data) => {
+		(async () => {
+			try {
+				const res = await api.post("/products", data);
+				console.log(res.data);
+				setProducts([...products, res.data]);
+				if (confirm("Submit successfully, redirect to admin page?")) {
+					navigate("/admin");
+				}
+			} catch (error) {
+				console.log(error);
+			}
+		})();
+	};
 
 	return (
 		<>
@@ -38,7 +53,7 @@ function App() {
 					<Route path="/contact" element={<Contact />} />
 					<Route path="/product-detail/:id" element={<ProductDetail />} />
 					<Route path="/admin" element={<Dashboard data={products} />} />
-					<Route path="/admin/product-add" element={<ProductAdd />} />
+					<Route path="/admin/product-add" element={<ProductAdd onProduct={hanldeSubmit} />} />
 					<Route path="*" element={<Notfound />} />
 				</Routes>
 			</main>

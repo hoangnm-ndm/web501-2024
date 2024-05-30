@@ -1,14 +1,14 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-const ProductAdd = () => {
+const ProductAdd = ({ onProduct }) => {
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm();
 	const onSubmit = (data) => {
-		console.log("add thanh cong!", data);
+		onProduct(data);
 	};
 	return (
 		<>
