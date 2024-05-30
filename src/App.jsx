@@ -12,7 +12,6 @@ import Dashboard from "./pages/admin/Dashboard";
 import api from "./axios";
 import ProductAdd from "./pages/admin/ProductAdd";
 
-// ! props = properties
 function App() {
 	const [products, setProducts] = useState([]);
 	const navigate = useNavigate();
@@ -20,8 +19,6 @@ function App() {
 		(async () => {
 			try {
 				const { data } = await api.get("/products");
-				console.log(data);
-				// http://localhost:3000/products
 				setProducts(data);
 			} catch (error) {
 				console.log(error);

@@ -1,5 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+
+// BTVN: validation voi zod:
+// title required, tối thiểu 6 ký tự.
+// price required, ko âm
 
 const ProductAdd = ({ onProduct }) => {
 	const {

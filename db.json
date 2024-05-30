@@ -593,6 +593,18 @@
       "price": "200",
       "description": "mo ta",
       "id": 37
+    },
+    {
+      "title": "",
+      "price": "",
+      "description": "",
+      "id": 38
+    },
+    {
+      "title": "h",
+      "price": "-200",
+      "description": "",
+      "id": 39
     }
   ]
 }
