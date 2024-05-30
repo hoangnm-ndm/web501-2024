@@ -16,3 +16,5 @@
 - Khi người dùng muốn vào admin, kiểm tra token tại localStorage, nếu không có token thì chuyển hướng về trang login. 5đ
 
 # Lab 8: Hoàn thiện toàn bộ ứng dụng. (7/6)
+
+// 29/5 Tìm hiểu trước về zod
