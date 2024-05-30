@@ -1813,6 +1813,18 @@
       "price": "1000",
       "description": "mo ta",
       "id": 33
+    },
+    {
+      "title": "",
+      "price": "",
+      "description": "",
+      "id": 34
+    },
+    {
+      "title": "dsdsdsds",
+      "price": "-2000",
+      "description": "",
+      "id": 35
     }
   ]
 }

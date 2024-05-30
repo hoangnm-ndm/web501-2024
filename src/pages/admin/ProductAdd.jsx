@@ -1,11 +1,18 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+
+/**
+ * ! BTVN:
+ * 1. validation title required, it nhat 6 ky tu
+ * 2. validation price required, >=0
+ */
 
 const ProductAdd = ({ onAddProduct }) => {
 	const {
 		register,
 		handleSubmit,
-		watch,
 		formState: { errors },
 	} = useForm();
 	const onSubmit = (data) => {
