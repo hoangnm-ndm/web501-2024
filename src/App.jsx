@@ -10,6 +10,7 @@ import Notfound from "./pages/Notfound";
 import ProductDetail from "./pages/ProductDetail";
 import Dashboard from "./pages/admin/Dashboard";
 import api from "./axios";
+import ProductAdd from "./pages/admin/ProductAdd";
 
 // ! props = properties
 function App() {
@@ -37,6 +38,7 @@ function App() {
 					<Route path="/contact" element={<Contact />} />
 					<Route path="/product-detail/:id" element={<ProductDetail />} />
 					<Route path="/admin" element={<Dashboard data={products} />} />
+					<Route path="/admin/product-add" element={<ProductAdd />} />
 					<Route path="*" element={<Notfound />} />
 				</Routes>
 			</main>
