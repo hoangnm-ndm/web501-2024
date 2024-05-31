@@ -3,17 +3,19 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import AboutPage from "./pages/AboutPage";
 import ShopPage from "./pages/ShopPage";
 import { useEffect, useState } from "react";
-import instance from "./axios";
+import instance, { getProducts } from "./axios";
 import DetailProduct from "./pages/DetailProduct";
 import Index from "./pages/admin/Index";
 import ProductAdd from "./pages/admin/ProductAdd";
+import ProductEdit from "./pages/admin/ProductEdit";
 
 function App() {
 	const [products, setProducts] = useState([]);
+	const navigate = useNavigate();
 	useEffect(() => {
 		(async () => {
 			try {
@@ -30,6 +32,24 @@ function App() {
 			try {
 				const res = await instance.post("/products", data);
 				setProducts([...products, res.data]);
+				if (confirm("Add product success, redirect to admin")) {
+					navigate("/admin");
+				}
+			} catch (error) {
+				console.log(error);
+			}
+		})();
+	};
+	const handleSubmitEdit = (data) => {
+		(async () => {
+			try {
+				const res = await instance.patch(`/products/${data.id}`, data);
+				console.log(res.data);
+				const newData = await getProducts();
+				setProducts(newData);
+				if (confirm("Edit product success, redirect to admin")) {
+					navigate("/admin");
+				}
 			} catch (error) {
 				console.log(error);
 			}
@@ -46,6 +66,7 @@ function App() {
 					<Route path="/shop" element={<ShopPage />} />
 					<Route path="/admin" element={<Index data={products} username="Nguyen Van Admin" />} />
 					<Route path="/admin/product-add" element={<ProductAdd onAdd={handleSubmit} />} />
+					<Route path="/admin/product-edit/:id" element={<ProductEdit onEdit={handleSubmitEdit} />} />
 					<Route path="*" element={<NotFoundPage />} />
 				</Routes>
 			</main>

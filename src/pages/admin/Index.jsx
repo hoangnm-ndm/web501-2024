@@ -28,7 +28,9 @@ const Index = ({ data, username }) => {
 							<td>{product.price}</td>
 							<td>{product.description ? product.description : "Updating"}</td>
 							<td>
-								<button className="btn btn-warning">Edit</button>
+								<Link to={`/admin/product-edit/${product.id}`} className="btn btn-warning">
+									Edit
+								</Link>
 								<button className="btn btn-danger">Remove</button>
 							</td>
 						</tr>
