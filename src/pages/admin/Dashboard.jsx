@@ -20,13 +20,15 @@ const Dashboard = ({ data }) => {
 				</thead>
 				<tbody>
 					{data.map((item) => (
-						<tr>
+						<tr key={item.id}>
 							<td>{item.id}</td>
 							<td>{item.title}</td>
 							<td>{item.price}</td>
 							<td>{item.description}</td>
 							<td>
-								<button className="btn btn-warning">Edit</button>
+								<Link to={`/admin/product-edit/${item.id}`} className="btn btn-warning">
+									Edit
+								</Link>
 								<button className="btn btn-danger">Remove</button>
 							</td>
 						</tr>

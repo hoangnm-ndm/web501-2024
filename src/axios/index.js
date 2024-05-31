@@ -8,4 +8,13 @@ const api = axios.create({
 	},
 });
 
+export const getProducts = async () => {
+	try {
+		const { data } = await api.get("/products");
+		return data;
+	} catch (error) {
+		console.error("Error fetching data:", error);
+	}
+};
+
 export default api;

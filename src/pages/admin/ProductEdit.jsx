@@ -1,7 +1,9 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { useParams } from "react-router-dom";
 import * as z from "zod";
+import api from "../../axios";
 
 const schemaProduct = z.object({
 	title: z.string().min(3, { message: "Tên phải có ít nhất 3 ký tự" }),
@@ -9,21 +11,29 @@ const schemaProduct = z.object({
 	description: z.string().optional(),
 });
 
-const ProductAdd = ({ onAdd }) => {
+const ProductEdit = ({ onEdit }) => {
+	const { id } = useParams();
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
+		reset,
 	} = useForm({
 		resolver: zodResolver(schemaProduct),
 	});
+	useEffect(() => {
+		(async () => {
+			const { data } = await api.get(`/products/${id}`);
+			reset(data);
+		})();
+	}, []);
 	const onSubmit = (data) => {
-		onAdd(data);
+		onEdit({ ...data, id });
 	};
 	return (
 		<div>
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<h1>Add product</h1>
+				<h1>Edit product</h1>
 				<div className="form-group mb-3">
 					<label className="form-label" htmlFor="title">
 						Title
@@ -47,7 +57,7 @@ const ProductAdd = ({ onAdd }) => {
 				</div>
 				<div className="form-group mb-3">
 					<button className="btn btn-primary w-100" type="submit">
-						Add product
+						Edit product
 					</button>
 				</div>
 			</form>
@@ -55,4 +65,4 @@ const ProductAdd = ({ onAdd }) => {
 	);
 };
 
-export default ProductAdd;
+export default ProductEdit;

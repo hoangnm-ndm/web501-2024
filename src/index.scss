@@ -48,11 +48,10 @@ header {
 
 main {
 	margin-top: 120px;
+	min-height: calc(100vh - 120px);
 }
 
 footer {
-	position: fixed;
-	bottom: 0;
 	width: 100%;
 	color: #eee;
 	background-color: #111;
