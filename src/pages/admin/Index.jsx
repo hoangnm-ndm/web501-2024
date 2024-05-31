@@ -26,7 +26,7 @@ const Index = ({ data, username }) => {
 							<td>{product.id}</td>
 							<td>{product.title}</td>
 							<td>{product.price}</td>
-							<td>{product.description}</td>
+							<td>{product.description ? product.description : "Updating"}</td>
 							<td>
 								<button className="btn btn-warning">Edit</button>
 								<button className="btn btn-danger">Remove</button>
