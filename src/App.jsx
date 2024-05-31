@@ -56,9 +56,10 @@ function App() {
 		})();
 	};
 
-	const handleRemove = () => {
+	const handleRemove = (data) => {
 		// ! BTVN: Code logic xoá sản phẩm có confirm vào đây.
 		// ! Xoá xong cập nhật lại danh sách sản phẩm.
+		console.log(data);
 	};
 	return (
 		<>

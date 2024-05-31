@@ -31,7 +31,7 @@ const Index = ({ data, removeProduct }) => {
 								<Link to={`/admin/product-edit/${product.id}`} className="btn btn-warning">
 									Edit
 								</Link>
-								<button onClick={removeProduct()} className="btn btn-danger">
+								<button onClick={() => removeProduct(product.id)} className="btn btn-danger">
 									Remove
 								</button>
 							</td>
