@@ -13,6 +13,7 @@ import ProductDetail from "./pages/ProductDetail";
 import ProductAdd from "./pages/admin/ProductAdd";
 import ProductEdit from "./pages/admin/ProductEdit";
 
+// ! BTVN : Làm chức năng xoá sản phẩm có confirm
 export default function App() {
 	const [products, setProducts] = useState([]);
 	const nav = useNavigate();
