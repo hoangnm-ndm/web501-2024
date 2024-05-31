@@ -55,6 +55,11 @@ function App() {
 			}
 		})();
 	};
+
+	const handleRemove = () => {
+		// ! BTVN: Code logic xoá sản phẩm có confirm vào đây.
+		// ! Xoá xong cập nhật lại danh sách sản phẩm.
+	};
 	return (
 		<>
 			<Header />
@@ -64,7 +69,7 @@ function App() {
 					<Route path="/product-detail/:id" element={<DetailProduct />} />
 					<Route path="/about" element={<AboutPage />} />
 					<Route path="/shop" element={<ShopPage />} />
-					<Route path="/admin" element={<Index data={products} username="Nguyen Van Admin" />} />
+					<Route path="/admin" element={<Index data={products} removeProduct={handleRemove} />} />
 					<Route path="/admin/product-add" element={<ProductAdd onAdd={handleSubmit} />} />
 					<Route path="/admin/product-edit/:id" element={<ProductEdit onEdit={handleSubmitEdit} />} />
 					<Route path="*" element={<NotFoundPage />} />
