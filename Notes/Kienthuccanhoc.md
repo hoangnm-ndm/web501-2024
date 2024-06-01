@@ -51,12 +51,12 @@ console.log(`My name is ${name} and I am ${age} years old`);
 
 # 6. Default parameter -done
 
-# 7. Bất đồng bộ và xử lý bất đồng bộ: callback, promise, async/await.
+# 7. Bất đồng bộ và xử lý bất đồng bộ: callback, promise, async/await. -done
 
-# 8. Axios
+# 8. Axios -done
 
 # 9. Modules: import, export -done
 
 # 10. ESLinst, Prettier, Coding convention, Clean code
 
-# 11. Json-server, json-server-auth.
+# 11. Json-server, json-server-auth. -50%

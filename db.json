@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-      "title": "iPhone 9",
+      "title": "iPhone 10",
       "description": "An apple mobile which is nothing like apple",
       "price": 549,
       "discountPercentage": 12.96,
@@ -200,9 +200,9 @@
     },
     {
       "id": 12,
-      "title": "Brown Perfume",
+      "title": "Brown Perfume nuoc hoa nam 2025",
       "description": "Royal_Mirage Sport Brown Perfume for Men & Women - 120ml",
-      "price": 40,
+      "price": 400,
       "discountPercentage": 15.66,
       "rating": 4,
       "stock": 52,
@@ -605,6 +605,18 @@
       "price": "-200",
       "description": "",
       "id": 39
+    },
+    {
+      "title": "",
+      "price": "",
+      "description": "",
+      "id": 40
+    },
+    {
+      "title": "ten san pham",
+      "price": 200,
+      "description": "",
+      "id": 41
     }
   ]
 }

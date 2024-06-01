@@ -9,8 +9,9 @@ import Contact from "./pages/Contact";
 import Notfound from "./pages/Notfound";
 import ProductDetail from "./pages/ProductDetail";
 import Dashboard from "./pages/admin/Dashboard";
-import api from "./axios";
+import api, { getProducts } from "./axios";
 import ProductAdd from "./pages/admin/ProductAdd";
+import ProductEdit from "./pages/admin/ProductEdit";
 
 function App() {
 	const [products, setProducts] = useState([]);
@@ -40,6 +41,21 @@ function App() {
 		})();
 	};
 
+	const hanldeSubmitEdit = (data) => {
+		(async () => {
+			try {
+				const res = await api.patch(`/products/${data.id}`, data);
+				const newData = await getProducts();
+				setProducts(newData);
+				if (confirm("Submit successfully, redirect to admin page?")) {
+					navigate("/admin");
+				}
+			} catch (error) {
+				console.log(error);
+			}
+		})();
+	};
+
 	return (
 		<>
 			<Header />
@@ -51,6 +67,7 @@ function App() {
 					<Route path="/product-detail/:id" element={<ProductDetail />} />
 					<Route path="/admin" element={<Dashboard data={products} />} />
 					<Route path="/admin/product-add" element={<ProductAdd onProduct={hanldeSubmit} />} />
+					<Route path="/admin/product-edit/:id" element={<ProductEdit onProduct={hanldeSubmitEdit} />} />
 					<Route path="*" element={<Notfound />} />
 				</Routes>
 			</main>
