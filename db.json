@@ -2,10 +2,10 @@
   "products": [
     {
       "id": 1,
-      "title": "Essence Mascara Lash Princess",
+      "title": "Chuốt mi update lần 2",
       "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
       "category": "beauty",
-      "price": 9.99,
+      "price": 100,
       "discountPercentage": 7.17,
       "rating": 4.94,
       "stock": 5,
@@ -550,10 +550,10 @@
     },
     {
       "id": 10,
-      "title": "Gucci Bloom Eau de",
+      "title": "Gucci Bloom Eau de 2025",
       "description": "Gucci Bloom by Gucci is a floral and captivating fragrance, with notes of tuberose, jasmine, and Rangoon creeper. It's a modern and romantic scent.",
       "category": "fragrances",
-      "price": 79.99,
+      "price": 9000,
       "discountPercentage": 8.9,
       "rating": 2.69,
       "stock": 93,

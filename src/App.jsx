@@ -11,6 +11,7 @@ import ProductDetail from "./pages/ProductDetail";
 import api from "./axios";
 import Dashboard from "./pages/admin/Dashboard";
 import ProductAdd from "./pages/admin/ProductAdd";
+import ProductEdit from "./pages/admin/ProductEdit";
 
 function App() {
 	const [products, setProducts] = useState([]);
@@ -42,6 +43,21 @@ function App() {
 		})();
 	};
 
+	const handleSubmitEdit = (data) => {
+		(async () => {
+			try {
+				await api.patch(`/products/${data.id}`, data);
+				const newData = await api.get("/products");
+				setProducts(newData.data);
+				if (confirm("Add succefully, redirect to admin page?")) {
+					navigate("/admin");
+				}
+			} catch (error) {
+				console.log(error);
+			}
+		})();
+	};
+
 	return (
 		<div>
 			<Header />
@@ -53,6 +69,7 @@ function App() {
 					<Route path="/about" element={<About />} />
 					<Route path="/admin" element={<Dashboard data={products} />} />
 					<Route path="/admin/product-add" element={<ProductAdd onAddProduct={handleSubmit} />} />
+					<Route path="/admin/product-edit/:id" element={<ProductEdit onEditProduct={handleSubmitEdit} />} />
 					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</main>
