@@ -3,18 +3,19 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 
-/**
- * ! BTVN:
- * 1. validation title required, it nhat 6 ky tu
- * 2. validation price required, >=0
- */
-
+const productSchema = z.object({
+	title: z.string().min(6, { message: "Toi thieu 6 ky tu" }),
+	price: z.number().min(0),
+	description: z.string().optional(),
+});
 const ProductAdd = ({ onAddProduct }) => {
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
-	} = useForm();
+	} = useForm({
+		resolver: zodResolver(productSchema),
+	});
 	const onSubmit = (data) => {
 		console.log(data);
 		onAddProduct(data);
@@ -28,12 +29,19 @@ const ProductAdd = ({ onAddProduct }) => {
 						Title
 					</label>
 					<input type="text" className="form-control" id="title" {...register("title")} />
+					{errors.title && <p className="text-danger">{errors.title.message}</p>}
 				</div>
 				<div className="mb-3">
 					<label htmlFor="price" className="form-label">
 						Price
 					</label>
-					<input type="text" className="form-control" id="price" {...register("price")} />
+					<input
+						type="number"
+						className="form-control"
+						id="price"
+						{...register("price", { required: true, valueAsNumber: true })}
+					/>
+					{errors.price && <p className="text-danger">{errors.price.message}</p>}
 				</div>
 				<div className="mb-3">
 					<label htmlFor="description" className="form-label">
