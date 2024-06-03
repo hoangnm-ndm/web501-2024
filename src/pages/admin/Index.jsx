@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 // ! props = propeties = Những thuộc tính
 const Index = ({ data, removeProduct }) => {
-	console.log(data);
 	return (
 		<>
 			<h1>Hello, Admin</h1>

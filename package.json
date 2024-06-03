@@ -4,7 +4,7 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "concurrently \"vite --port 5173\" \"json-server --watch db.json --port 3000\"",
+		"dev": "concurrently \"vite --port 5173\" \"json-server --watch db.json -m ./node_modules/json-server-auth --port 3000\"",
 		"build": "vite build",
 		"lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview"
@@ -16,6 +16,7 @@
 		"axios": "^1.7.2",
 		"concurrently": "^8.2.2",
 		"json-server": "^0.17.0",
+		"json-server-auth": "^2.1.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-hook-form": "^7.51.5",

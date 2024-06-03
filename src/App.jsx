@@ -12,6 +12,8 @@ import DetailProduct from "./pages/DetailProduct";
 import Index from "./pages/admin/Index";
 import ProductAdd from "./pages/admin/ProductAdd";
 import ProductEdit from "./pages/admin/ProductEdit";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
 	const [products, setProducts] = useState([]);
@@ -56,10 +58,18 @@ function App() {
 		})();
 	};
 
-	const handleRemove = (data) => {
-		// ! BTVN: Code logic xoá sản phẩm có confirm vào đây.
-		// ! Xoá xong cập nhật lại danh sách sản phẩm.
-		console.log(data);
+	const handleRemove = (id) => {
+		(async () => {
+			try {
+				if (confirm("Are you sure?")) {
+					await instance.delete(`/products/${id}`);
+					const newData = products.filter((item) => item.id !== id && item);
+					setProducts(newData);
+				}
+			} catch (error) {
+				console.log(error);
+			}
+		})();
 	};
 	return (
 		<>
@@ -67,6 +77,8 @@ function App() {
 			<main className="container">
 				<Routes>
 					<Route path="/" element={<HomePage products={products} />} />
+					<Route path="/login" element={<Login />} />
+					<Route path="/register" element={<Register />} />
 					<Route path="/product-detail/:id" element={<DetailProduct />} />
 					<Route path="/about" element={<AboutPage />} />
 					<Route path="/shop" element={<ShopPage />} />
