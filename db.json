@@ -509,5 +509,17 @@
       "description": "An apple mobile which is nothing like apple",
       "id": 32
     }
+  ],
+  "users": [
+    {
+      "email": "thayhoang@gmail.com",
+      "password": "$2a$10$Lk/IC85Pj/kkgLxYLWJMBe/8l1kSHbOIuN/ke4hMOfuOGyUDvvh26",
+      "id": 1
+    },
+    {
+      "email": "hoangjs@gmail.com",
+      "password": "$2a$10$AtQunbH2dETX1hBatGDIBuFcbmw29tZkeyIS3j5zTfblmLuuMvYJ2",
+      "id": 2
+    }
   ]
 }

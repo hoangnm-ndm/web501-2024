@@ -12,6 +12,7 @@ import Dashboard from "./pages/admin/Dashboard";
 import ProductDetail from "./pages/ProductDetail";
 import ProductAdd from "./pages/admin/ProductAdd";
 import ProductEdit from "./pages/admin/ProductEdit";
+import Register from "./pages/Register";
 
 export default function App() {
 	const [products, setProducts] = useState([]);
@@ -79,6 +80,7 @@ export default function App() {
 					<Route path="/admin" element={<Dashboard data={products} removeProduct={removeProduct} />} />
 					<Route path="/admin/product-add" element={<ProductAdd onAdd={handleProductAdd} />} />
 					<Route path="/admin/product-edit/:id" element={<ProductEdit onEdit={handleProductEdit} />} />
+					<Route path="/register" element={<Register />} />
 					<Route path="*" element={<NotFoundPage />} />
 				</Routes>
 			</main>
