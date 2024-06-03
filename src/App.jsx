@@ -13,7 +13,6 @@ import ProductDetail from "./pages/ProductDetail";
 import ProductAdd from "./pages/admin/ProductAdd";
 import ProductEdit from "./pages/admin/ProductEdit";
 
-// ! BTVN : Làm chức năng xoá sản phẩm có confirm
 export default function App() {
 	const [products, setProducts] = useState([]);
 	const nav = useNavigate();
@@ -44,8 +43,6 @@ export default function App() {
 		(async () => {
 			try {
 				await api.patch(`/products/${data.id}`, data);
-				// const newData = products.map((item) => (item.id === data.id ? data : item));
-				// setProducts(newData);
 				const newData = await getProducts();
 				setProducts(newData);
 				if (confirm("Them thanh cong, co muon ve dashboard admin khong?")) {
@@ -53,6 +50,19 @@ export default function App() {
 				}
 			} catch (error) {
 				console.error("Error fetching data:", error);
+			}
+		})();
+	};
+	const removeProduct = (id) => {
+		(async () => {
+			try {
+				if (confirm("Are you sure?")) {
+					await api.delete(`/products/${id}`);
+					const newData = products.filter((item) => item.id !== id && item);
+					setProducts(newData);
+				}
+			} catch (error) {
+				console.log(error);
 			}
 		})();
 	};
@@ -66,7 +76,7 @@ export default function App() {
 					<Route path="/product-detail/:id" element={<ProductDetail />} />
 					<Route path="/about" element={<AboutPage />} />
 					<Route path="/login" element={<LoginPage />} />
-					<Route path="/admin" element={<Dashboard data={products} />} />
+					<Route path="/admin" element={<Dashboard data={products} removeProduct={removeProduct} />} />
 					<Route path="/admin/product-add" element={<ProductAdd onAdd={handleProductAdd} />} />
 					<Route path="/admin/product-edit/:id" element={<ProductEdit onEdit={handleProductEdit} />} />
 					<Route path="*" element={<NotFoundPage />} />

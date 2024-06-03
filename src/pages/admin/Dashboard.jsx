@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Dashboard = ({ data }) => {
+const Dashboard = ({ data, removeProduct }) => {
 	return (
 		<div>
 			<h1>Hello Admin</h1>
@@ -29,7 +29,9 @@ const Dashboard = ({ data }) => {
 								<Link to={`/admin/product-edit/${item.id}`} className="btn btn-warning">
 									Edit
 								</Link>
-								<button className="btn btn-danger">Remove</button>
+								<button onClick={() => removeProduct(item.id)} className="btn btn-danger">
+									Remove
+								</button>
 							</td>
 						</tr>
 					))}
