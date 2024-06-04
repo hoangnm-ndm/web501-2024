@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Home = ({ data }) => {
+const Home = ({ data, removeProduct }) => {
 	return (
 		<div>
 			<Link className="btn btn-success" to="/admin/product-add">
@@ -30,7 +30,9 @@ const Home = ({ data }) => {
 									<Link to={`/admin/product-edit/${item.id}`} className="btn btn-warning">
 										Edit
 									</Link>
-									<button className="btn btn-danger">Remove</button>
+									<button onClick={() => removeProduct(item.id)} className="btn btn-danger">
+										Remove
+									</button>
 								</td>
 							</tr>
 						))}

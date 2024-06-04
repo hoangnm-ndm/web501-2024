@@ -50,6 +50,24 @@ function App() {
 			}
 		})();
 	};
+	const removeProduct = (id) => {
+		(async () => {
+			try {
+				if (confirm("Are you sure?")) {
+					await api.delete(`/products/${id}`);
+					// Cach 1:
+					// const newData = products.filter((item) => item.id !== id && item);
+					// setProducts(newData);
+
+					// Cach 2:
+					const newData = await api.get(`/products`);
+					setProducts(newData.data);
+				}
+			} catch (error) {
+				console.log(error);
+			}
+		})();
+	};
 
 	return (
 		<>
@@ -68,7 +86,7 @@ function App() {
 			</header>
 			<main className="container">
 				<Routes>
-					<Route path="/" element={<Home data={products} />} />
+					<Route path="/" element={<Home data={products} removeProduct={removeProduct} />} />
 					<Route path="/admin/product-add" element={<ProductAdd onProduct={hanldeSubmit} />} />
 					<Route path="/register" element={<Register />} />
 					<Route path="/login" element={<Login />} />
