@@ -52,6 +52,21 @@ function App() {
 		})();
 	};
 
+	const removeProduct = (id) => {
+		(async () => {
+			if (confirm("Are you sure?")) {
+				await api.delete(`/products/${id}`);
+				// Cach 1: fetch lai danh sach san pham
+				// const newData = await api.get(`/products`);
+				// setProducts(newData.data);
+
+				// Cach 2: filter bo qua san pham vua bi xoa
+				const newData = products.filter((item) => item.id !== id && item);
+				setProducts(newData);
+			}
+		})();
+	};
+
 	return (
 		<div>
 			<header>
@@ -77,7 +92,7 @@ function App() {
 			</header>
 			<main className="container">
 				<Routes>
-					<Route path="/" element={<Home data={products} />} />
+					<Route path="/" element={<Home data={products} removeProduct={removeProduct} />} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/register" element={<Register />} />
 					<Route path="/product-add" element={<ProductAdd onAddProduct={handleSubmit} />} />

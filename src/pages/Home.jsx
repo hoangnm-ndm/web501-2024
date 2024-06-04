@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import api from "../axios";
 
-const Home = ({ data }) => {
+const Home = ({ data, removeProduct }) => {
 	return (
 		<>
 			<h1>Hello, Admin</h1>
@@ -27,7 +28,9 @@ const Home = ({ data }) => {
 							<td>{p.thumbnail ? <img src={p.thumbnail} alt={p.title} /> : "Updating"}</td>
 							<td>{p.description}</td>
 							<td>
-								<button className="btn btn-danger">Remove</button>
+								<button onClick={() => removeProduct(p.id)} className="btn btn-danger">
+									Remove
+								</button>
 								<Link to={`/product-edit/${p.id}`} className="btn btn-warning">
 									Update
 								</Link>
