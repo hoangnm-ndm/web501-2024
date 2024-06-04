@@ -20,7 +20,7 @@
 
 # ASM 1: (Chấm ngày 28/5)
 
-# Lab 5. Hoàn thiện các tính năng CRUD phía admin. (4/5)
+# Lab 5. Hoàn thiện các tính năng CRUD phía admin. (4/6)
 
 - Danh sách sản phẩm dạng bảng. 2.5đ
 - Thêm sản phẩm mới (bắt buộc bao gồm: tên, giá không âm, mô tả). 2.5đ
