@@ -1590,5 +1590,22 @@
       "description": "mo ta",
       "id": 36
     }
+  ],
+  "users": [
+    {
+      "email": "asdasd@mail.com",
+      "password": "$2a$10$GfViMGwfeR9yCu.eyP43ye.3rwneFi0XzFYXs/.xWNIOvgd/JwbCi",
+      "id": 1
+    },
+    {
+      "email": "hoang@gmail.com",
+      "password": "$2a$10$Aazsqni1ALk.Ypz97.GBAOu1KZjPp5is3zqkx2yoWijZVL1tic.Se",
+      "id": 2
+    },
+    {
+      "email": "hoang1@gmail.com",
+      "password": "$2a$10$h8/a/XAYptBvUQ.c1Y6Knu/uqk36MiwtaDKLq4V08dPVVxXshHZMa",
+      "id": 3
+    }
   ]
 }
