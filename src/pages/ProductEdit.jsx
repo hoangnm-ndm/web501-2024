@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import { z } from "zod";
-import api from "../../axios";
+import api from "../axios";
 
 const productSchema = z.object({
 	title: z.string().min(6, { message: "Toi thieu 6 ky tu" }),

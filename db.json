@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-      "title": "iPhone 10",
+      "title": "iPhone 10 update lan 2",
       "description": "An apple mobile which is nothing like apple",
       "price": 549,
       "discountPercentage": 12.96,
@@ -617,6 +617,18 @@
       "price": 200,
       "description": "",
       "id": 41
+    },
+    {
+      "title": "san pham moi thang 6",
+      "price": 200,
+      "description": " mo ta",
+      "id": 42
+    },
+    {
+      "title": "them san pham update",
+      "price": 200,
+      "description": "mo ta",
+      "id": 43
     }
   ]
 }

@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import "./App.scss";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import api from "./axios";
 import Home from "./pages/Home";
-import { Route, Routes, useNavigate } from "react-router-dom";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Notfound from "./pages/Notfound";
-import ProductDetail from "./pages/ProductDetail";
-import Dashboard from "./pages/admin/Dashboard";
-import api, { getProducts } from "./axios";
-import ProductAdd from "./pages/admin/ProductAdd";
-import ProductEdit from "./pages/admin/ProductEdit";
+import ProductAdd from "./pages/ProductAdd";
+import ProductEdit from "./pages/ProductEdit";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 
 function App() {
 	const [products, setProducts] = useState([]);
@@ -33,7 +28,7 @@ function App() {
 				console.log(res.data);
 				setProducts([...products, res.data]);
 				if (confirm("Submit successfully, redirect to admin page?")) {
-					navigate("/admin");
+					navigate("/");
 				}
 			} catch (error) {
 				console.log(error);
@@ -44,11 +39,11 @@ function App() {
 	const hanldeSubmitEdit = (data) => {
 		(async () => {
 			try {
-				const res = await api.patch(`/products/${data.id}`, data);
-				const newData = await getProducts();
-				setProducts(newData);
+				await api.patch(`/products/${data.id}`, data);
+				const newData = await api.get("/products");
+				setProducts(newData.data);
 				if (confirm("Submit successfully, redirect to admin page?")) {
-					navigate("/admin");
+					navigate("/");
 				}
 			} catch (error) {
 				console.log(error);
@@ -58,20 +53,28 @@ function App() {
 
 	return (
 		<>
-			<Header />
+			<header>
+				<ul>
+					<li>
+						<Link to="/">Home</Link>
+					</li>
+					<li>
+						<Link to="/login">Login</Link>
+					</li>
+					<li>
+						<Link to="/register">Register</Link>
+					</li>
+				</ul>
+			</header>
 			<main className="container">
 				<Routes>
 					<Route path="/" element={<Home data={products} />} />
-					<Route path="/about" element={<About />} />
-					<Route path="/contact" element={<Contact />} />
-					<Route path="/product-detail/:id" element={<ProductDetail />} />
-					<Route path="/admin" element={<Dashboard data={products} />} />
 					<Route path="/admin/product-add" element={<ProductAdd onProduct={hanldeSubmit} />} />
+					<Route path="/register" element={<Register />} />
+					<Route path="/login" element={<Login />} />
 					<Route path="/admin/product-edit/:id" element={<ProductEdit onProduct={hanldeSubmitEdit} />} />
-					<Route path="*" element={<Notfound />} />
 				</Routes>
 			</main>
-			<Footer />
 		</>
 	);
 }

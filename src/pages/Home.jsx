@@ -1,29 +1,43 @@
 import { Link } from "react-router-dom";
 
 const Home = ({ data }) => {
-	console.log(data);
 	return (
-		<>
-			<div className="row">
-				{data.map((p) => (
-					<div className="col-12 col-sm-6 col-md-4 col-lg-3" key={p.id}>
-						<div className="card">
-							<Link to={`/product-detail/${p.id}`}>
-								<img src={p.thumbnail} alt="" />
-							</Link>
-							<div className="content">
-								<Link to={`/product-detail/${p.id}`}>
-									<h2>{p.title}</h2>
-								</Link>
-								<p>Price: {p.price}</p>
-								<p>Brand: {p.brand}</p>
-								<button className="btn btn-danger w-100">Add to card</button>
-							</div>
-						</div>
-					</div>
-				))}
-			</div>
-		</>
+		<div>
+			<Link className="btn btn-success" to="/admin/product-add">
+				Add new product
+			</Link>
+			{
+				<table className="table-bordered table-striped text-center">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Title</th>
+							<th>Price</th>
+							<th>Description</th>
+							<th>Thumbnail</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						{data.map((item) => (
+							<tr key={item.id}>
+								<td>{item.id}</td>
+								<td>{item.title}</td>
+								<td>{item.price}</td>
+								<td>{item.description || "Updating"}</td>
+								<td>{item.thumbnail ? <img src={item.thumbnail} alt="" width={100} /> : "Updating"}</td>
+								<td>
+									<Link to={`/admin/product-edit/${item.id}`} className="btn btn-warning">
+										Edit
+									</Link>
+									<button className="btn btn-danger">Remove</button>
+								</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			}
+		</div>
 	);
 };
 
