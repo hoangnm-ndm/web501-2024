@@ -22,12 +22,12 @@ const Register = () => {
 	const onSubmit = (data) => {
 		(async () => {
 			try {
-				await instance.post(`/login`, data);
+				const res = await instance.post(`/login`, data);
+				localStorage.setItem("user", JSON.stringify(res.data));
 				if (confirm("Successfully, redirect to home?")) {
 					nav("/");
 				}
 			} catch (error) {
-				console.log(error);
 				alert(error.response.data);
 			}
 		})();

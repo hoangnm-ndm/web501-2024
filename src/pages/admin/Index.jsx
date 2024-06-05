@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const Index = ({ data, removeProduct }) => {
 	return (
 		<>
-			<h1>Hello, Admin</h1>
 			<Link to="/admin/product-add" className="btn btn-primary">
 				Add new product
 			</Link>
