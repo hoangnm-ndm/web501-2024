@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// ! props = propeties = Những thuộc tính
-const Index = ({ data, removeProduct }) => {
+const Home = ({ data, removeProduct }) => {
 	return (
 		<>
-			<Link to="/admin/product-add" className="btn btn-primary">
+			<Link to="/product-add" className="btn btn-primary">
 				Add new product
 			</Link>
 			<table className="table table-bordered table-striped text-center">
@@ -26,7 +25,7 @@ const Index = ({ data, removeProduct }) => {
 							<td>{product.price}</td>
 							<td>{product.description ? product.description : "Updating"}</td>
 							<td>
-								<Link to={`/admin/product-edit/${product.id}`} className="btn btn-warning">
+								<Link to={`/product-edit/${product.id}`} className="btn btn-warning">
 									Edit
 								</Link>
 								<button onClick={() => removeProduct(product.id)} className="btn btn-danger">
@@ -41,4 +40,4 @@ const Index = ({ data, removeProduct }) => {
 	);
 };
 
-export default Index;
+export default Home;

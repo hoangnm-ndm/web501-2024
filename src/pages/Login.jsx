@@ -10,7 +10,7 @@ const authSchema = z.object({
 	password: z.string().min(6),
 });
 
-const Register = () => {
+const Login = () => {
 	const nav = useNavigate();
 	const {
 		register,
@@ -19,18 +19,16 @@ const Register = () => {
 	} = useForm({
 		resolver: zodResolver(authSchema),
 	});
-	const onSubmit = (data) => {
-		(async () => {
-			try {
-				const res = await instance.post(`/login`, data);
-				localStorage.setItem("user", JSON.stringify(res.data));
-				if (confirm("Successfully, redirect to home?")) {
-					nav("/");
-				}
-			} catch (error) {
-				alert(error.response.data);
+	const onSubmit = async (data) => {
+		try {
+			const res = await instance.post(`/login`, data);
+			localStorage.setItem("user", JSON.stringify(res.data));
+			if (confirm("Successfully, redirect to home?")) {
+				nav("/");
 			}
-		})();
+		} catch (error) {
+			alert(error.response.data);
+		}
 	};
 	return (
 		<div>
@@ -62,4 +60,4 @@ const Register = () => {
 	);
 };
 
-export default Register;
+export default Login;

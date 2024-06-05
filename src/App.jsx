@@ -1,17 +1,10 @@
-import "./App.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import HomePage from "./pages/HomePage";
-import NotFoundPage from "./pages/NotFoundPage";
-import { Route, Routes, useNavigate } from "react-router-dom";
-import AboutPage from "./pages/AboutPage";
-import ShopPage from "./pages/ShopPage";
 import { useEffect, useState } from "react";
-import instance, { getProducts } from "./axios";
-import DetailProduct from "./pages/DetailProduct";
-import Index from "./pages/admin/Index";
-import ProductAdd from "./pages/admin/ProductAdd";
-import ProductEdit from "./pages/admin/ProductEdit";
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import "./App.css";
+import instance from "./axios";
+import Home from "./pages/Home";
+import ProductAdd from "./pages/ProductAdd";
+import ProductEdit from "./pages/ProductEdit";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
@@ -20,75 +13,65 @@ function App() {
 	const navigate = useNavigate();
 	useEffect(() => {
 		(async () => {
-			try {
-				const { data } = await instance.get("/products");
-				setProducts(data);
-			} catch (error) {
-				console.log(error);
-			}
+			const { data } = await instance.get("/products");
+			setProducts(data);
 		})();
 	}, []);
 
-	const handleSubmit = (data) => {
-		(async () => {
-			try {
-				const res = await instance.post("/products", data);
-				setProducts([...products, res.data]);
-				if (confirm("Add product success, redirect to admin")) {
-					navigate("/admin");
-				}
-			} catch (error) {
-				console.log(error);
-			}
-		})();
+	const handleSubmit = async (data) => {
+		const res = await instance.post("/products", data);
+		setProducts([...products, res.data]);
+		if (confirm("Add product success, redirect to home")) {
+			navigate("/");
+		}
 	};
-	const handleSubmitEdit = (data) => {
-		(async () => {
-			try {
-				const res = await instance.patch(`/products/${data.id}`, data);
-				console.log(res.data);
-				const newData = await getProducts();
-				setProducts(newData);
-				if (confirm("Edit product success, redirect to admin")) {
-					navigate("/admin");
-				}
-			} catch (error) {
-				console.log(error);
-			}
-		})();
+	const handleSubmitEdit = async (data) => {
+		const res = await instance.patch(`/products/${data.id}`, data);
+		console.log(res.data);
+		const newData = await instance.get("/products");
+		setProducts(newData.data);
+		if (confirm("Edit product success, redirect to home")) {
+			navigate("/");
+		}
 	};
 
-	const handleRemove = (id) => {
-		(async () => {
-			try {
-				if (confirm("Are you sure?")) {
-					await instance.delete(`/products/${id}`);
-					const newData = products.filter((item) => item.id !== id && item);
-					setProducts(newData);
-				}
-			} catch (error) {
-				console.log(error);
-			}
-		})();
+	const handleRemove = async (id) => {
+		if (confirm("Are you sure?")) {
+			await instance.delete(`/products/${id}`);
+			const newData = products.filter((item) => item.id !== id && item);
+			setProducts(newData);
+		}
 	};
 	return (
 		<>
-			<Header />
+			<header>
+				<ul>
+					<li>
+						<Link to="/">Home</Link>
+					</li>
+					<li>
+						<Link to="/about">About</Link>
+					</li>
+					<li>
+						<Link to="/shop">Shop</Link>
+					</li>
+					<li>
+						<Link to="/register">Register</Link>
+					</li>
+					<li>
+						<Link to="/login">Login</Link>
+					</li>
+				</ul>
+			</header>
 			<main className="container">
 				<Routes>
-					<Route path="/" element={<HomePage products={products} />} />
+					<Route path="/" element={<Home data={products} removeProduct={handleRemove} />} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/register" element={<Register />} />
-					<Route path="/product-detail/:id" element={<DetailProduct />} />
-					<Route path="/about" element={<AboutPage />} />
-					<Route path="/shop" element={<ShopPage />} />
-					<Route path="/admin" element={<Index data={products} removeProduct={handleRemove} />} />
-					<Route path="/admin/product-add" element={<ProductAdd onAdd={handleSubmit} />} />
-					<Route path="/admin/product-edit/:id" element={<ProductEdit onEdit={handleSubmitEdit} />} />
-					<Route path="*" element={<NotFoundPage />} />
+					<Route path="/product-add" element={<ProductAdd onAdd={handleSubmit} />} />
+					<Route path="/product-edit/:id" element={<ProductEdit onEdit={handleSubmitEdit} />} />
 				</Routes>
 			</main>
-			<Footer />
 		</>
 	);
 }

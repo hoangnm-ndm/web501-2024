@@ -8,22 +8,4 @@ const instance = axios.create({
 	},
 });
 
-export const getProductByID = async (id) => {
-	try {
-		const { data } = await instance.get(`/products/${id}`);
-		return data;
-	} catch (error) {
-		console.log(error);
-	}
-};
-
-export const getProducts = async () => {
-	try {
-		const { data } = await instance.get(`/products`);
-		return data;
-	} catch (error) {
-		console.log(error);
-	}
-};
-
 export default instance;

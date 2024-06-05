@@ -19,18 +19,15 @@ const Register = () => {
 	} = useForm({
 		resolver: zodResolver(authSchema),
 	});
-	const onSubmit = (data) => {
-		(async () => {
-			try {
-				await instance.post(`/register`, data);
-				if (confirm("Successfully, redirect to login?")) {
-					nav("/login");
-				}
-			} catch (error) {
-				console.log(error);
-				alert(error.response.data);
+	const onSubmit = async (data) => {
+		try {
+			await instance.post(`/register`, data);
+			if (confirm("Successfully, redirect to login?")) {
+				nav("/login");
 			}
-		})();
+		} catch (error) {
+			alert(error.response.data);
+		}
 	};
 	return (
 		<div>
