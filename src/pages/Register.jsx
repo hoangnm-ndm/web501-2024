@@ -3,6 +3,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import api from "../axios";
+import { useNavigate } from "react-router-dom";
 
 const schema = z.object({
 	email: z.string().email(),
@@ -10,6 +11,7 @@ const schema = z.object({
 });
 
 const Register = () => {
+	const nav = useNavigate();
 	const {
 		register,
 		handleSubmit,
@@ -20,10 +22,12 @@ const Register = () => {
 	const onSubmit = (data) => {
 		(async () => {
 			try {
-				const res = await api.post(`/register`, data);
-				console.log(res);
+				await api.post(`/register`, data);
+				if (confirm("Successfully, redirect to login?")) {
+					nav("/login");
+				}
 			} catch (error) {
-				console.log(error);
+				alert(error.response.data);
 			}
 		})();
 	};

@@ -504,7 +504,7 @@
       "id": 31
     },
     {
-      "title": "iPhone X",
+      "title": "iPhone XR",
       "price": 700,
       "description": "An apple mobile which is nothing like apple",
       "id": 32
@@ -520,6 +520,11 @@
       "email": "hoangjs@gmail.com",
       "password": "$2a$10$AtQunbH2dETX1hBatGDIBuFcbmw29tZkeyIS3j5zTfblmLuuMvYJ2",
       "id": 2
+    },
+    {
+      "email": "thayhoangjs@gmail.com",
+      "password": "$2a$10$J3kIqwsECM1UKefQG/n5EOHuv/gt0noJmS37oNyqEz/zBy7Cggcg.",
+      "id": 3
     }
   ]
 }

@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import * as z from "zod";
-import api from "../../axios";
+import api from "../axios";
 
 const schemaProduct = z.object({
 	title: z.string().min(3, { message: "Tên phải có ít nhất 3 ký tự" }),

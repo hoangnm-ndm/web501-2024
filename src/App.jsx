@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import "./App.css";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import AboutPage from "./pages/AboutPage";
-import HomePage from "./pages/HomePage";
-import LoginPage from "./pages/LoginPage";
-import NotFoundPage from "./pages/NotFoundPage";
-import api, { getProducts } from "./axios";
-import Dashboard from "./pages/admin/Dashboard";
-import ProductDetail from "./pages/ProductDetail";
-import ProductAdd from "./pages/admin/ProductAdd";
-import ProductEdit from "./pages/admin/ProductEdit";
+import Home from "./pages/Home";
 import Register from "./pages/Register";
+import ProductAdd from "./pages/ProductAdd";
+import ProductEdit from "./pages/ProductEdit";
+import Login from "./pages/Login";
+import api from "./axios";
 
 export default function App() {
 	const [products, setProducts] = useState([]);
@@ -32,8 +26,8 @@ export default function App() {
 			try {
 				const result = await api.post("/products", data);
 				setProducts([...products, result.data]);
-				if (confirm("Them thanh cong, co muon ve dashboard admin khong?")) {
-					nav("/admin");
+				if (confirm("successfully, redirect to home?")) {
+					nav("/");
 				}
 			} catch (error) {
 				console.error("Error fetching data:", error);
@@ -44,10 +38,10 @@ export default function App() {
 		(async () => {
 			try {
 				await api.patch(`/products/${data.id}`, data);
-				const newData = await getProducts();
-				setProducts(newData);
-				if (confirm("Them thanh cong, co muon ve dashboard admin khong?")) {
-					nav("/admin");
+				const newData = await api.get("/products");
+				setProducts(newData.data);
+				if (confirm("successfully, redirect to home?")) {
+					nav("/");
 				}
 			} catch (error) {
 				console.error("Error fetching data:", error);
@@ -69,22 +63,32 @@ export default function App() {
 	};
 	return (
 		<>
-			<Header />
+			<header>
+				<ul>
+					<li>
+						<Link to="/">Home</Link>
+					</li>
+					<li>
+						<Link to="/about">About</Link>
+					</li>
+					<li>
+						<Link to="/login">Login</Link>
+					</li>
+					<li>
+						<Link to="/register">Register</Link>
+					</li>
+				</ul>
+			</header>
 			<main className="container">
 				<Routes>
-					<Route path="/" element={<HomePage data={products} />} />
-					<Route path="/home" element={<Navigate to="/" />} />
-					<Route path="/product-detail/:id" element={<ProductDetail />} />
-					<Route path="/about" element={<AboutPage />} />
-					<Route path="/login" element={<LoginPage />} />
-					<Route path="/admin" element={<Dashboard data={products} removeProduct={removeProduct} />} />
-					<Route path="/admin/product-add" element={<ProductAdd onAdd={handleProductAdd} />} />
-					<Route path="/admin/product-edit/:id" element={<ProductEdit onEdit={handleProductEdit} />} />
+					<Route path="/" element={<Home data={products} removeProduct={removeProduct} />} />
 					<Route path="/register" element={<Register />} />
-					<Route path="*" element={<NotFoundPage />} />
+					<Route path="/login" element={<Login />} />
+
+					<Route path="/product-add" element={<ProductAdd onAdd={handleProductAdd} />} />
+					<Route path="/product-edit/:id" element={<ProductEdit onEdit={handleProductEdit} />} />
 				</Routes>
 			</main>
-			<Footer />
 		</>
 	);
 }

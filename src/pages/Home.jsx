@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Dashboard = ({ data, removeProduct }) => {
+const Home = ({ data, removeProduct }) => {
 	return (
 		<div>
-			<h1>Hello Admin</h1>
-			<Link className="btn btn-primary" to="/admin/product-add">
+			<Link className="btn btn-primary" to="/product-add">
 				Add new product
 			</Link>
 			<table className="table table-bordered table-striped text-center">
@@ -26,7 +25,7 @@ const Dashboard = ({ data, removeProduct }) => {
 							<td>{item.price}</td>
 							<td>{item.description}</td>
 							<td>
-								<Link to={`/admin/product-edit/${item.id}`} className="btn btn-warning">
+								<Link to={`product-edit/${item.id}`} className="btn btn-warning">
 									Edit
 								</Link>
 								<button onClick={() => removeProduct(item.id)} className="btn btn-danger">
@@ -41,4 +40,4 @@ const Dashboard = ({ data, removeProduct }) => {
 	);
 };
 
-export default Dashboard;
+export default Home;
