@@ -4,7 +4,7 @@
       "id": 3,
       "title": "Samsung Universe 9",
       "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-      "price": 1249,
+      "price": 99999,
       "discountPercentage": 15.46,
       "rating": 4.09,
       "stock": 36,
@@ -462,7 +462,7 @@
     },
     {
       "id": 29,
-      "title": "Handcraft Chinese style",
+      "title": "Handcraft Chinese style update",
       "description": "Handcraft Chinese style art luxury palace hotel villa mansion home decor ceramic vase with brass fruit plate",
       "price": 60,
       "discountPercentage": 15.34,
@@ -480,34 +480,22 @@
       ]
     },
     {
-      "id": 30,
-      "title": "Key Holder",
-      "description": "Attractive DesignMetallic materialFour key hooksReliable & DurablePremium Quality",
-      "price": 30,
-      "discountPercentage": 2.92,
-      "rating": 4.92,
-      "stock": 54,
-      "brand": "Golden",
-      "category": "home-decoration",
-      "thumbnail": "https://cdn.dummyjson.com/product-images/30/thumbnail.jpg",
-      "images": [
-        "https://cdn.dummyjson.com/product-images/30/1.jpg",
-        "https://cdn.dummyjson.com/product-images/30/2.jpg",
-        "https://cdn.dummyjson.com/product-images/30/3.jpg",
-        "https://cdn.dummyjson.com/product-images/30/thumbnail.jpg"
-      ]
-    },
-    {
-      "title": "them san pham moi ao vest nam 2024",
-      "price": 1000,
-      "description": "mo ta",
-      "id": 31
-    },
-    {
       "title": "iPhone XR",
       "price": 700,
       "description": "An apple mobile which is nothing like apple",
       "id": 32
+    },
+    {
+      "title": "sdadsa",
+      "price": 232323,
+      "description": "232323",
+      "id": 33
+    },
+    {
+      "title": "them moi",
+      "price": 10000,
+      "description": "mo ta",
+      "id": 34
     }
   ],
   "users": [
@@ -525,6 +513,11 @@
       "email": "thayhoangjs@gmail.com",
       "password": "$2a$10$J3kIqwsECM1UKefQG/n5EOHuv/gt0noJmS37oNyqEz/zBy7Cggcg.",
       "id": 3
+    },
+    {
+      "email": "111@gmail.com",
+      "password": "$2a$10$ufmdSPAtmcYkIttV.J9.IOVCntq3bj9Yb7nqAW3vTW/xGd0TfwxAK",
+      "id": 4
     }
   ]
 }

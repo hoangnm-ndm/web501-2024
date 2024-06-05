@@ -19,18 +19,16 @@ const Login = () => {
 	} = useForm({
 		resolver: zodResolver(schema),
 	});
-	const onSubmit = (data) => {
-		(async () => {
-			try {
-				const res = await api.post(`/login`, data);
-				localStorage.setItem("user", JSON.stringify(res.data));
-				if (confirm("Successfully, redirect to home?")) {
-					nav("/");
-				}
-			} catch (error) {
-				alert(error.response.data);
+	const onSubmit = async (data) => {
+		try {
+			const res = await api.post(`/login`, data);
+			localStorage.setItem("user", JSON.stringify(res.data));
+			if (confirm("Successfully, redirect to home?")) {
+				nav("/");
 			}
-		})();
+		} catch (error) {
+			alert(error.response.data);
+		}
 	};
 	return (
 		<div>

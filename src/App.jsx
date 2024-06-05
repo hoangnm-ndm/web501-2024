@@ -13,66 +13,39 @@ export default function App() {
 	const nav = useNavigate();
 	useEffect(() => {
 		(async () => {
-			try {
-				const { data } = await api.get("/products");
-				setProducts(data);
-			} catch (error) {
-				console.error("Error fetching data:", error);
-			}
+			const { data } = await api.get("/products");
+			setProducts(data);
 		})();
 	}, []);
-	const handleProductAdd = (data) => {
-		(async () => {
-			try {
-				const result = await api.post("/products", data);
-				setProducts([...products, result.data]);
-				if (confirm("successfully, redirect to home?")) {
-					nav("/");
-				}
-			} catch (error) {
-				console.error("Error fetching data:", error);
-			}
-		})();
+	const handleProductAdd = async (data) => {
+		const result = await api.post("/products", data);
+		setProducts([...products, result.data]);
+		if (confirm("successfully, redirect to home?")) {
+			nav("/");
+		}
 	};
-	const handleProductEdit = (data) => {
-		(async () => {
-			try {
-				await api.patch(`/products/${data.id}`, data);
-				const newData = await api.get("/products");
-				setProducts(newData.data);
-				if (confirm("successfully, redirect to home?")) {
-					nav("/");
-				}
-			} catch (error) {
-				console.error("Error fetching data:", error);
-			}
-		})();
+	const handleProductEdit = async (data) => {
+		await api.patch(`/products/${data.id}`, data);
+		const newData = await api.get("/products");
+		setProducts(newData.data);
+		if (confirm("successfully, redirect to home?")) {
+			nav("/");
+		}
 	};
-	const removeProduct = (id) => {
-		(async () => {
-			try {
-				if (confirm("Are you sure?")) {
-					await api.delete(`/products/${id}`);
-					const newData = products.filter((item) => item.id !== id && item);
-					setProducts(newData);
-				}
-			} catch (error) {
-				console.log(error);
-			}
-		})();
+	const removeProduct = async (id) => {
+		if (confirm("Are you sure?")) {
+			await api.delete(`/products/${id}`);
+			const newData = products.filter((item) => item.id !== id && item);
+			setProducts(newData);
+		}
 	};
-	const email = JSON.parse(localStorage.getItem("user"))?.user?.email;
-	console.log(email);
 	return (
 		<>
 			<header>
-				<h1>{email ? `Hello, ${email}` : "Ban chua dang nhap"}</h1>
+				{/* <h1>{email ? `Hello, ${email}` : "Ban chua dang nhap"}</h1> */}
 				<ul>
 					<li>
 						<Link to="/">Home</Link>
-					</li>
-					<li>
-						<Link to="/about">About</Link>
 					</li>
 					<li>
 						<Link to="/login">Login</Link>
@@ -87,7 +60,6 @@ export default function App() {
 					<Route path="/" element={<Home data={products} removeProduct={removeProduct} />} />
 					<Route path="/register" element={<Register />} />
 					<Route path="/login" element={<Login />} />
-
 					<Route path="/product-add" element={<ProductAdd onAdd={handleProductAdd} />} />
 					<Route path="/product-edit/:id" element={<ProductEdit onEdit={handleProductEdit} />} />
 				</Routes>

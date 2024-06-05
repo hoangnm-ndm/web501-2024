@@ -19,17 +19,15 @@ const Register = () => {
 	} = useForm({
 		resolver: zodResolver(schema),
 	});
-	const onSubmit = (data) => {
-		(async () => {
-			try {
-				await api.post(`/register`, data);
-				if (confirm("Successfully, redirect to login?")) {
-					nav("/login");
-				}
-			} catch (error) {
-				alert(error.response.data);
+	const onSubmit = async (data) => {
+		try {
+			await api.post(`/register`, data);
+			if (confirm("Successfully, redirect to login?")) {
+				nav("/login");
 			}
-		})();
+		} catch (error) {
+			alert(error.response.data);
+		}
 	};
 	return (
 		<div>

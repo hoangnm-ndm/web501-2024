@@ -27,12 +27,9 @@ const ProductEdit = ({ onEdit }) => {
 			reset(data);
 		})();
 	}, []);
-	const onSubmit = (data) => {
-		onEdit({ ...data, id });
-	};
 	return (
 		<div>
-			<form onSubmit={handleSubmit(onSubmit)}>
+			<form onSubmit={handleSubmit((data) => onEdit({ ...data, id }))}>
 				<h1>Edit product</h1>
 				<div className="form-group mb-3">
 					<label className="form-label" htmlFor="title">
