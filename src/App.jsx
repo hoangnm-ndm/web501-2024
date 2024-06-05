@@ -61,9 +61,12 @@ export default function App() {
 			}
 		})();
 	};
+	const email = JSON.parse(localStorage.getItem("user"))?.user?.email;
+	console.log(email);
 	return (
 		<>
 			<header>
+				<h1>{email ? `Hello, ${email}` : "Ban chua dang nhap"}</h1>
 				<ul>
 					<li>
 						<Link to="/">Home</Link>
