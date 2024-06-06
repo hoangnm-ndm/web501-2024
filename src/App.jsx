@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { Link, Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import "./App.scss";
-import { Link, Navigate, Outlet, Route, Routes, useNavigate } from "react-router-dom";
 import api from "./axios";
-import Register from "./pages/Register";
-import ProductAdd from "./pages/ProductAdd";
-import ProductEdit from "./pages/ProductEdit";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import PrivateRoute from "./pages/PrivateRoute";
+import ProductAdd from "./pages/ProductAdd";
+import ProductEdit from "./pages/ProductEdit";
+import Register from "./pages/Register";
+import ProductForm from "./pages/ProductForm";
 
 function App() {
 	const [products, setProducts] = useState([]);
@@ -22,19 +23,35 @@ function App() {
 		})();
 	}, []);
 
-	const handleSubmit = async (data) => {
-		const res = await api.post("/products", data);
-		setProducts([...products, res.data]);
-		if (confirm("Add succefully, redirect to home page?")) {
-			navigate("/admin");
-		}
-	};
+	// const handleSubmit = async (data) => {
+	// 	const res = await api.post("/products", data);
+	// 	setProducts([...products, res.data]);
+	// 	if (confirm("Add succefully, redirect to home page?")) {
+	// 		navigate("/admin");
+	// 	}
+	// };
 
-	const handleSubmitEdit = async (data) => {
-		await api.patch(`/products/${data.id}`, data);
-		const newData = await api.get("/products");
-		setProducts(newData.data);
-		if (confirm("Add succefully, redirect to home page?")) {
+	// const handleSubmitEdit = async (data) => {
+	// 	await api.patch(`/products/${data.id}`, data);
+	// 	const newData = await api.get("/products");
+	// 	setProducts(newData.data);
+	// 	if (confirm("Add succefully, redirect to home page?")) {
+	// 		navigate("/admin");
+	// 	}
+	// };
+
+	const handleProduct = async (data) => {
+		if (data.id) {
+			// logic cho edit product
+			await api.patch(`/products/${data.id}`, data);
+			const newData = await api.get("/products");
+			setProducts(newData.data);
+		} else {
+			// logic cho add product
+			const res = await api.post("/products", data);
+			setProducts([...products, res.data]);
+		}
+		if (confirm("Successfully, redirect to admin page?")) {
 			navigate("/admin");
 		}
 	};
@@ -84,12 +101,15 @@ function App() {
 				<Routes>
 					<Route path="/login" element={<Login />} />
 					<Route path="/register" element={<Register />} />
+					<Route path="/" element={<Navigate to="/admin" />} />
 
 					{/* Private route for admin */}
 					<Route path="/admin" element={<PrivateRoute />}>
 						<Route path="/admin" element={<Home data={products} removeProduct={removeProduct} />} />
-						<Route path="/admin/product-add" element={<ProductAdd onAddProduct={handleSubmit} />} />
-						<Route path="/admin/product-edit/:id" element={<ProductEdit onEditProduct={handleSubmitEdit} />} />
+						{/* <Route path="/admin/product-add" element={<ProductAdd onAddProduct={handleSubmit} />} />
+						<Route path="/admin/product-edit/:id" element={<ProductEdit onEditProduct={handleSubmitEdit} />} /> */}
+						<Route path="/admin/product-add" element={<ProductForm handleProduct={handleProduct} />} />
+						<Route path="/admin/product-edit/:id" element={<ProductForm handleProduct={handleProduct} />} />
 					</Route>
 				</Routes>
 			</main>

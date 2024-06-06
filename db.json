@@ -2,10 +2,10 @@
   "products": [
     {
       "id": 1,
-      "title": "Chuốt mi update lần 2",
+      "title": "Chuốt mi update lần 3",
       "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
       "category": "beauty",
-      "price": 100,
+      "price": 300,
       "discountPercentage": 7.17,
       "rating": 4.94,
       "stock": 5,
@@ -1561,34 +1561,10 @@
       "id": 31
     },
     {
-      "title": "iphone 16 promax",
-      "price": "3000",
+      "title": "iphone 16",
+      "price": 3000,
       "description": "mo ta",
       "id": 32
-    },
-    {
-      "title": "them san pham 2026",
-      "price": "1000",
-      "description": "mo ta",
-      "id": 33
-    },
-    {
-      "title": "",
-      "price": "",
-      "description": "",
-      "id": 34
-    },
-    {
-      "title": "dsdsdsds",
-      "price": "-2000",
-      "description": "",
-      "id": 35
-    },
-    {
-      "title": "san pham moi",
-      "price": 100,
-      "description": "mo ta",
-      "id": 36
     }
   ],
   "users": [
