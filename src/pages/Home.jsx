@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import api from "../axios";
 
 const Home = ({ data, removeProduct }) => {
 	return (

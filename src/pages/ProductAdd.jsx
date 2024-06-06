@@ -15,13 +15,9 @@ const ProductAdd = ({ onAddProduct }) => {
 	} = useForm({
 		resolver: zodResolver(productSchema),
 	});
-	const onSubmit = (data) => {
-		console.log(data);
-		onAddProduct(data);
-	};
 	return (
 		<>
-			<form onSubmit={handleSubmit(onSubmit)}>
+			<form onSubmit={handleSubmit((data) => onAddProduct(data))}>
 				<h1>Product Add</h1>
 				<div className="mb-3">
 					<label htmlFor="title" className="form-label">

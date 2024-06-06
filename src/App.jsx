@@ -14,57 +14,34 @@ function App() {
 
 	useEffect(() => {
 		(async () => {
-			try {
-				const { data } = await api.get("/products");
-				setProducts(data);
-			} catch (error) {
-				console.log(error);
-			}
+			const { data } = await api.get("/products");
+			setProducts(data);
 		})();
 	}, []);
 
-	const handleSubmit = (data) => {
-		(async () => {
-			try {
-				const res = await api.post("/products", data);
-				setProducts([...products, res.data]);
-				if (confirm("Add succefully, redirect to home page?")) {
-					navigate("/");
-				}
-			} catch (error) {
-				console.log(error);
-			}
-		})();
+	const handleSubmit = async (data) => {
+		const res = await api.post("/products", data);
+		setProducts([...products, res.data]);
+		if (confirm("Add succefully, redirect to home page?")) {
+			navigate("/");
+		}
 	};
 
-	const handleSubmitEdit = (data) => {
-		(async () => {
-			try {
-				await api.patch(`/products/${data.id}`, data);
-				const newData = await api.get("/products");
-				setProducts(newData.data);
-				if (confirm("Add succefully, redirect to home page?")) {
-					navigate("/");
-				}
-			} catch (error) {
-				console.log(error);
-			}
-		})();
+	const handleSubmitEdit = async (data) => {
+		await api.patch(`/products/${data.id}`, data);
+		const newData = await api.get("/products");
+		setProducts(newData.data);
+		if (confirm("Add succefully, redirect to home page?")) {
+			navigate("/");
+		}
 	};
 
-	const removeProduct = (id) => {
-		(async () => {
-			if (confirm("Are you sure?")) {
-				await api.delete(`/products/${id}`);
-				// Cach 1: fetch lai danh sach san pham
-				// const newData = await api.get(`/products`);
-				// setProducts(newData.data);
-
-				// Cach 2: filter bo qua san pham vua bi xoa
-				const newData = products.filter((item) => item.id !== id && item);
-				setProducts(newData);
-			}
-		})();
+	const removeProduct = async (id) => {
+		if (confirm("Are you sure?")) {
+			await api.delete(`/products/${id}`);
+			const newData = products.filter((item) => item.id !== id && item);
+			setProducts(newData);
+		}
 	};
 
 	return (

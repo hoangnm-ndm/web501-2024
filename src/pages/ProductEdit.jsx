@@ -22,20 +22,13 @@ const ProductEdit = ({ onEditProduct }) => {
 	});
 	useEffect(() => {
 		(async () => {
-			try {
-				const { data } = await api.get(`/products/${id}`);
-				reset(data);
-			} catch (error) {
-				console.log(error);
-			}
+			const { data } = await api.get(`/products/${id}`);
+			reset(data);
 		})();
 	}, []);
-	const onSubmit = (data) => {
-		onEditProduct({ ...data, id });
-	};
 	return (
 		<>
-			<form onSubmit={handleSubmit(onSubmit)}>
+			<form onSubmit={handleSubmit((data) => onEditProduct({ ...data, id }))}>
 				<h1>Product Edit</h1>
 				<div className="mb-3">
 					<label htmlFor="title" className="form-label">
