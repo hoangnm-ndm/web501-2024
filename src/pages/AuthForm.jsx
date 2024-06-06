@@ -10,7 +10,8 @@ const schema = z.object({
 	password: z.string().min(6),
 });
 
-const Login = () => {
+const AuthForm = ({ isRegister }) => {
+	console.log(isRegister);
 	const nav = useNavigate();
 	const {
 		register,
@@ -21,10 +22,19 @@ const Login = () => {
 	});
 	const onSubmit = async (data) => {
 		try {
-			const res = await api.post(`/login`, data);
-			localStorage.setItem("user", JSON.stringify(res.data));
-			if (confirm("Successfully, redirect to home page?")) {
-				nav("/admin");
+			if (isRegister) {
+				// logic cho register
+				await api.post(`/register`, data);
+				if (confirm("Successfully, redirect to login page?")) {
+					nav("/login");
+				}
+			} else {
+				// logic cho login
+				const res = await api.post(`/login`, data);
+				localStorage.setItem("user", JSON.stringify(res.data));
+				if (confirm("Successfully, redirect to home page?")) {
+					nav("/admin");
+				}
 			}
 		} catch (error) {
 			alert(error.response.data);
@@ -33,10 +43,10 @@ const Login = () => {
 	return (
 		<div>
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<h1>Login</h1>
+				<h1>{isRegister ? "Register" : "Login"}</h1>
 				<div className="mb-3">
 					<label htmlFor="email" className="form-label">
-						email
+						Email
 					</label>
 					<input className="form-control" type="email" {...register("email")} />
 					{errors.email && <p className="text-danger">{errors.email.message}</p>}
@@ -50,7 +60,7 @@ const Login = () => {
 				</div>
 				<div className="mb-3">
 					<button type="submit" className="btn btn-primary w-100">
-						Submit
+						{isRegister ? "Register" : "Login"}
 					</button>
 				</div>
 			</form>
@@ -58,4 +68,4 @@ const Login = () => {
 	);
 };
 
-export default Login;
+export default AuthForm;

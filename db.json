@@ -1582,6 +1582,11 @@
       "email": "hoang1@gmail.com",
       "password": "$2a$10$h8/a/XAYptBvUQ.c1Y6Knu/uqk36MiwtaDKLq4V08dPVVxXshHZMa",
       "id": 3
+    },
+    {
+      "email": "hoangnm62@gmail.com",
+      "password": "$2a$10$59tzLes6WDVISnXCQlsEe.ZLv220/Oqf3cKzi.c31J.R.L6HoKX0C",
+      "id": 4
     }
   ]
 }

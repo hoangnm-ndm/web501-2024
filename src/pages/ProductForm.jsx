@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
 import { useParams } from "react-router-dom";
+import * as z from "zod";
 import api from "../axios";
 
 const productSchema = z.object({
@@ -10,6 +10,7 @@ const productSchema = z.object({
 	price: z.number().min(0),
 	description: z.string().optional(),
 });
+
 const ProductForm = ({ handleProduct }) => {
 	const { id } = useParams();
 	const {
