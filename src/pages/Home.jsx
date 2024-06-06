@@ -4,7 +4,7 @@ const Home = ({ data, removeProduct }) => {
 	return (
 		<>
 			<h1>Hello, Admin</h1>
-			<Link to="/product-add" className="btn btn-success">
+			<Link to="/admin/product-add" className="btn btn-success">
 				Add new product
 			</Link>
 			<table className="table table-bordered table-striped text-center">
@@ -30,7 +30,7 @@ const Home = ({ data, removeProduct }) => {
 								<button onClick={() => removeProduct(p.id)} className="btn btn-danger">
 									Remove
 								</button>
-								<Link to={`/product-edit/${p.id}`} className="btn btn-warning">
+								<Link to={`/admin/product-edit/${p.id}`} className="btn btn-warning">
 									Update
 								</Link>
 							</td>

@@ -22,9 +22,9 @@ const Login = () => {
 	const onSubmit = async (data) => {
 		try {
 			const res = await api.post(`/login`, data);
-			localStorage.setItem("users", JSON.stringify(res.data));
+			localStorage.setItem("user", JSON.stringify(res.data));
 			if (confirm("Successfully, redirect to home page?")) {
-				nav("/");
+				nav("/admin");
 			}
 		} catch (error) {
 			alert(error.response.data);
