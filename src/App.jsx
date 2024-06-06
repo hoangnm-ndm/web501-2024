@@ -7,6 +7,7 @@ import ProductAdd from "./pages/ProductAdd";
 import ProductEdit from "./pages/ProductEdit";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import PrivateRoute from "./pages/PrivateRoute";
 
 function App() {
 	const [products, setProducts] = useState([]);
@@ -74,7 +75,7 @@ function App() {
 			<header>
 				<ul>
 					<li>
-						<Link to="/">Home</Link>
+						<Link to="/admin">Home</Link>
 					</li>
 					<li>
 						<Link to="/login">Login</Link>
@@ -86,11 +87,14 @@ function App() {
 			</header>
 			<main className="container">
 				<Routes>
-					<Route path="/" element={<Home data={products} removeProduct={removeProduct} />} />
-					<Route path="/admin/product-add" element={<ProductAdd onProduct={hanldeSubmit} />} />
 					<Route path="/register" element={<Register />} />
 					<Route path="/login" element={<Login />} />
-					<Route path="/admin/product-edit/:id" element={<ProductEdit onProduct={hanldeSubmitEdit} />} />
+
+					<Route path="/admin" element={<PrivateRoute />}>
+						<Route path="/admin" element={<Home data={products} removeProduct={removeProduct} />} />
+						<Route path="/admin/product-add" element={<ProductAdd onProduct={hanldeSubmit} />} />
+						<Route path="/admin/product-edit/:id" element={<ProductEdit onProduct={hanldeSubmitEdit} />} />
+					</Route>
 				</Routes>
 			</main>
 		</>
