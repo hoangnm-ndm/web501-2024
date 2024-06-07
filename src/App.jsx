@@ -42,7 +42,6 @@ export default function App() {
 	return (
 		<>
 			<header>
-				{/* <h1>{email ? `Hello, ${email}` : "Ban chua dang nhap"}</h1> */}
 				<ul>
 					<li>
 						<Link to="/">Home</Link>
